@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const numbers = [27, 81, 3, 42, 76, 5, 18, 98, 11, 65];
+	let sum = 0;
+	let average = 0;
+	console.log(numbers.length);
+	for (let i = 0; i < numbers.length; i++) {
+		// 求和
+		sum = sum + numbers[i];
+	}
+	// 求平均
+	average = sum / numbers.length;
+	document.write(`[27, 81, 3, 42, 76, 5, 18, 98, 11, 65]和值为${sum}<br>`);
+	document.write(`[27, 81, 3, 42, 76, 5, 18, 98, 11, 65]平均值值为${average}`);
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// - 比如 用户输入的是 5， 则计算 1~5 之间的累加和
+	// - 比如用户输入的是10， 则计算 1~10 之间的累加和
+	let num = +prompt('请输入一个数计算1到这个数的累加和');
+	let sum = 0;
+	let i = 1;
+	while (i <= num) {
+		sum = sum + i;
+		i++;
+	}
+	document.write(`1~${num} 之间的累加和是${sum}`)
+</script>
+</body>
+</html>

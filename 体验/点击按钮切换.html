@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.button-box {
+			display: flex;
+			justify-content: center;
+		}
+		
+		.button-box div {
+			width: 100px;
+			height: 40px;
+			text-align: center;
+			line-height: 40px;
+			margin: 20px;
+			border: 1px solid cadetblue;
+			cursor: pointer;
+		}
+		
+		
+		.pink {
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+<div class="button-box">
+	<div>按钮1</div>
+	<div>按钮2</div>
+	<div>按钮3</div>
+	<div>按钮4</div>
+</div>
+<script>
+	let buttonBox = document.querySelectorAll(".button-box div");
+	for (let i = 0; i < buttonBox.length; i++) {
+		buttonBox[i].addEventListener('click', function () {
+			buttonBox[i].classList.add("pink");
+			for (let j = 0; j < buttonBox.length; j++) {
+				if (j !== i) {
+					buttonBox[j].classList.remove("pink");
+				}
+			}
+		});
+	}
+</script>
+</body>
+</html>

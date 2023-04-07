@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	let fraction = +prompt('请输入您的分数');
+	let grade = null;
+	if (fraction >= 90) {
+		grade = 'A';
+	} else if (fraction >= 80) {
+		grade = 'B';
+	} else if (fraction >= 70) {
+		grade = 'C';
+	} else if (fraction >= 60) {
+		grade = 'D';
+	} else {
+		grade = 'E';
+	}
+	document.write(`您的评级是${grade}`);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	let row = +prompt('请输入行数');
+	if (Number.isInteger(row)) {
+		for (let i = 0; i < row; i++) {
+			for (let j = 0; j < 5; j++) {
+				document.write('★');
+			}
+			document.write('<br>');
+		}
+	} else {
+		document.write("你干嘛呀");
+	}
+</script>
+</body>
+</html>

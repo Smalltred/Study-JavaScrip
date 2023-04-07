@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+		}
+		
+		table, td {
+			border: 1px solid black;
+		}
+		
+		td {
+			width: 100px;
+			padding: 5px;
+		}
+		
+		table td {
+			width: 200px;
+			height: 10px;
+			text-align: center;
+		}
+		
+		span {
+			display: inline-block;
+			width: 120px;
+			margin: 10px;
+			border-radius: 7px;
+			box-shadow: 0 3px 5px 0 pink;
+			background-color: pink;
+			text-align: center;
+			color: white;
+			cursor: pointer;
+			transition: all .3s ease;
+		}
+		
+		span:hover {
+			font-size: 18px;
+			transform: scale(1.3);
+			
+		}
+	</style>
+</head>
+<body>
+<table>
+	<tbody></tbody>
+</table>
+<script>
+	let tbody = document.querySelectorAll('tbody')[0];
+	for (let i = 1; i <= 9; i++) {
+		// 打印九列
+		let tr = document.createElement('tr');
+		tbody.appendChild(tr);
+		for (let j = 1; j <= i; j++) {
+			let td = document.createElement('td');
+			tr.appendChild(td);
+			td.innerHTML = `${j} x ${i} = ${j * i}`;
+			document.write(`<span>${j} x ${i} = ${j * i}</span>`);
+		}
+		document.write(`<br>`);
+	}
+	console.log(tbody);
+</script>
+</body>
+</html>

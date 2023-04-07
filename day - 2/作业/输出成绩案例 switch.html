@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	let fraction = +prompt('请输入您的分数');
+	let flag = null;
+	switch (true) {
+		case fraction >= 90:
+			flag = '您的评级是A';
+			break;
+		case fraction >= 80 && fraction < 90:
+			flag = '您的评级是B';
+			break;
+		case fraction >= 70 && fraction < 80:
+			flag = '您的评级是C';
+			break;
+		case fraction >= 60 && fraction < 70:
+			flag = '您的评级是D';
+			break;
+		case fraction < 60:
+			flag = '您的评级是E';
+			break;
+		default:
+			flag = '你干嘛呀';
+	}
+	document.write(flag);
+</script>
+</body>
+</html>

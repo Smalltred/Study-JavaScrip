@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	let accountBalance = 0;
+	while (1) {
+		let operate = +prompt('请选择您的操作\n1.取款\n2.存款\n3.查余额\n4.退出');
+		if (operate === 4) {
+			break;
+		}
+		switch (operate) {
+			case 1:
+				if (accountBalance === 0) {
+					alert(`您的账号余额为${accountBalance}`);
+				} else {
+					let amount = +prompt('请输入您的取走的金额');
+					accountBalance = accountBalance - amount;
+				}
+				break;
+			case 2:
+				let amount = +prompt('请输入您要存的金额');
+				accountBalance = accountBalance + amount;
+				break
+			case 3:
+				alert(`您的账号余额为${accountBalance}`);
+				break
+			default:
+				alert('你干嘛呀')
+		}
+	}
+</script>
+</body>
+</html>

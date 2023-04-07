@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// let operator = prompt('1.请输入运算符+ - * / %\n2.输入q是退出');
+	// let num1 = +prompt('请输入第一个数');
+	// let num2 = +prompt('请输入第二个数');
+	let result = null;
+	while (1) {
+		let operator = prompt('1.请输入运算符+ - * / %\n2.输入q是退出');
+		if (operator === 'q') {
+			break;
+		}
+		let num1 = +prompt('请输入第一个数');
+		let num2 = +prompt('请输入第二个数');
+		if (operator === '+') {
+			result = num1 + num2;
+			result = `两数相加是${result}`;
+		} else if (operator === '-') {
+			result = num1 - num2;
+			result = `两数相减是${result}`;
+		} else if (operator === '*') {
+			result = num1 * num2;
+			result = `两数相乘是${result}`;
+		} else if (operator === '/') {
+			result = num1 / num2;
+			result = `两数相除是${result}`;
+		} else if (operator === '%') {
+			result = num1 % num2;
+			result = `两数取模是${result}`;
+		} else {
+			result = '你干嘛呀'
+		}
+		alert(result);
+	}
+</script>
+</body>
+</html>

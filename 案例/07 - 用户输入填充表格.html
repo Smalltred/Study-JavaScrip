@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		h1 {
+			margin: 10px;
+			text-align: center;
+		}
+		
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+		}
+		
+		table, th, td {
+			border: 1px solid black;
+		}
+		
+		th, td {
+			width: 100px;
+			padding: 10px;
+		}
+		
+		table td {
+			width: 200px;
+			height: 10px;
+			text-align: center;
+		}
+		
+		.buy-button {
+			width: 90px;
+			height: 30px;
+			margin: 10px auto;
+			text-align: center;
+			line-height: 30px;
+			border: 1px solid black;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<h1>订单付款确认页面</h1>
+<table>
+	<thead>
+		<tr>
+			<th>商品名称</th>
+			<th>商品价格</th>
+			<th>商品数量</th>
+			<th>商品总价</th>
+			<th>收获地址</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>小米手机青春PLUS</td>
+			<td id="pr"></td>
+			<td id="num"></td>
+			<td id="total"></td>
+			<td id="address"></td>
+		</tr>
+	</tbody>
+</table>
+<div class="buy-button" id="buy-button">点击购买</div>
+<script>
+	// 选择数量、收获地址
+	const buyButton = document.getElementById('buy-button');
+	buyButton.addEventListener('click', function () {
+		let price = Number(prompt('请输入商品的价格'));
+		let prNum = Number(prompt('请输入购买的数量'));
+		let userAddress = prompt('请输入收获地址');
+		let priceDom = document.getElementById('pr');
+		priceDom.innerHTML = `${price}元`;
+		document.getElementById('num').innerHTML = `${prNum}`;
+		document.getElementById('total').innerHTML = `${prNum * price}元`;
+		document.getElementById('address').innerHTML = userAddress;
+	});
+</script>
+</body>
+</html>

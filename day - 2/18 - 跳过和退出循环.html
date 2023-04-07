@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 退出整个循环
+	// let i = 1;
+	// while (i <= 5) {
+	// 	// 第三个包子有虫子，后面的我也不想吃了，就丢了后面的三个
+	// 	if (i === 3){
+	// 		break  // 退出整个循环
+	// 	}
+	// 	console.log(`我要吃第${i}个包子了`);
+	// 	i++;
+	// }
+	// 跳过本次循环 注意 跳过循环要先 ++
+	let i = 1;
+	while (i <= 5) {
+		// 第三个包子有虫子，后面也许没有虫子，只有第三个没吃
+		if (i === 3) {
+			i++;
+			continue;
+		}
+		console.log(`我要吃第${i}个包子了`);
+		i++;
+	}
+</script>
+</body>
+</html>

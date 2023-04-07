@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	let i = 1;
+	let sum = 0;
+	while (i <= 100) {
+		if (i % 2 === 0) {
+			console.log(`偶数是${i}`);
+			sum = sum + i;
+		} else {
+			console.log(`奇数是${i}`);
+		}
+		i++;
+	}
+	document.write(`1到100的所有偶数之和是${sum}`)
+</script>
+</body>
+</html>
