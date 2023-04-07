@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<!-- 使用for循环 - 求出数组里大于5的i的和 [4, 9, 5, 20, 3, 11] -->
+<script>
+	const arr = [4, 9, 5, 20, 3, 11]
+	let sum = 0;
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] > 5) {
+			sum +=arr[i]
+		}
+	}
+	document.write(`[4, 9, 5, 20, 3, 11]里大于5的i的和${sum} `)
+</script>
+</body>
+</html>

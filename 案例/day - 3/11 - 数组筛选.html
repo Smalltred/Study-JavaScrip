@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 筛选 大于 等于 27的数 放到新数组
+	const numbers = [27, 81, 3, 42, 76, 5, 18, 98, 11, 65];
+	const max = 27;
+	let newNumbers = [];
+	for (let i = 0; i < numbers.length; i++) {
+		if (max <= numbers[i]) {
+			newNumbers.push(numbers[i]);
+		}
+	}
+	console.log(newNumbers);
+</script>
+</body>
+</html>

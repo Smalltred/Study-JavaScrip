@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<!-- 计算[2, 6, 18, 15, 40] 中能被3整除的偶数的个数 -->
+<script>
+	let arr = [2, 6, 18, 15, 40];
+	const num = 3;
+	const even = 2;
+	let len = 0;
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] % num === 0 && arr[i] % even === 0) {
+			len +=i;
+		}
+	}
+	document.write(`[2, 6, 18, 15, 40] 中能被3整除的偶数的个数是${len}`);
+</script>
+</body>
+</html>

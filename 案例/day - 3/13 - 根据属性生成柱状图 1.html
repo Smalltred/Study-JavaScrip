@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			
+		}
+		
+		.box {
+			display: flex;
+			justify-content: space-around;
+			align-items: flex-end;
+			width: 1200px;
+			height: 400px;
+			margin: 0 auto;
+			border-bottom: 1px solid pink;
+			border-left: 1px solid pink;
+		}
+		
+		.columnar {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 70px;
+			background-color: pink;
+		}
+		
+		.columnar h1 {
+			position: relative;
+			top: 20px;
+			text-align: center;
+			font-weight: bold;
+			font-size: 16px;
+		}
+		
+		.columnar span {
+			margin-top: -20px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<div class="box">
+	<div class="columnar" style="height: 0">
+		<span>0</span>
+		<h1>第1季度</h1>
+	</div>
+	<div class="columnar" style="height: 0">
+		<span>0</span>
+		<h1>第2季度</h1>
+	</div>
+	<div class="columnar" style="height: 0">
+		<span>0</span>
+		<h1>第2季度</h1>
+	</div>
+	<div class="columnar" style="height: 0">
+		<span>0</span>
+		<h1>第2季度</h1>
+	</div>
+</div>
+<script>
+	let numArr = [];
+	const columnar = document.querySelectorAll('.box .columnar');
+	for (let i = 1; i <= columnar.length; i++) {
+		numArr.push(prompt(`请输入第${i}季度的数据`));
+	}
+	for (let i = 0; i < columnar.length; i++) {
+		columnar[i].style.height = `${numArr[i]}px`;
+		columnar[i].querySelector('span').innerHTML = `${numArr[i]}`;
+	}
+</script>
+</body>
+</html>

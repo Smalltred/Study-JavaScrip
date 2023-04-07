@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<!-- 给一个数字数组，该数组中有很多数字0，将不为0的数据存入到一个新的数组中 -->
+<script>
+	const arr = [1, 0, 0, 2, 0, 3, 0, 0, 4, 0];
+	let newArr = [];
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] !== 0) {
+			newArr.push(arr[i])
+		}
+	}
+	document.write(`原来的数组[${arr}]<br>`)
+	document.write(`不为0的数组[${newArr}]`)
+</script>
+</body>
+</html>

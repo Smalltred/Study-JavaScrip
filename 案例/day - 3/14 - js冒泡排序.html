@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 从小到大排序
+	let numbers = [27, 81, 3, 42, 76, 5, 18, 98, 11, 65, 564, 12, 547, 48, 12, 454, 42];
+	// 需要循环的次数是 数组长度 - 1
+	for (let i = 0; i < numbers.length - 1; i++) {
+		// 需要交换的次数 数组长度 - 已经交排序过的次数 - 1 ， 已经排序过了就不需要再额外遍历了
+		for (let j = 0; j < numbers.length - i - 1; j++) {
+			if (numbers[j] > numbers[j + 1]) {
+				let temp = numbers[j];
+				numbers[j] = numbers[j + 1];
+				numbers[j + 1] = temp;
+			}
+		}
+	}
+	console.log(numbers);
+	// 从大到小排序
+	let numbers1 = [27, 81, 3, 42, 76, 5, 18, 98, 11, 65, 564, 12, 547, 48, 12, 454, 42];
+	for (let i = 0; i < numbers1.length - 1; i++) {
+		for (let j = 0; j < numbers1.length - i - 1; j++) {
+			if (numbers1[j] < numbers1[j + 1]) {
+				let temp = numbers1[j];
+				numbers1[j] = numbers1[j + 1];
+				numbers1[j + 1] = temp;
+			}
+		}
+	}
+	console.log(numbers1);
+</script>
+</body>
+</html>

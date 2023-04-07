@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 数组去0
+	const numbers = [27, 81, 0, 42, 76, 0, 18, 0, 11, 65];
+	const zero = 0;
+	let newNumbers = [];
+	for (let i = 0; i < numbers.length; i++) {
+		if (numbers[i] !== zero) {
+			newNumbers.push(numbers[i]);
+		}
+	}
+	console.log(newNumbers);
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<!-- 写一个程序，要求如下（★★） -->
+<!-- * 需求1：让用户输入五个有效年龄（0-100之间），放入数组中 -->
+<!-- * 必须输入五个有效年龄年龄，如果是无效年龄，则不能放入数组中 -->
+<!-- * 需求2：打印出所有成年人的年龄 (数组筛选) -->
+<!-- * 需求3：打印出所有人总年龄 （累加） -->
+<!-- * 需求4：打印出所有人的平均年龄 （累加） -->
+<!-- * 需求5：打印出最大年龄和最小年龄 （最大值） -->
+<script>
+	document.write('成年的年龄分别是');
+	let ages = [];
+	let sum = 0;
+	let max;
+	let min;
+	const adult = 18;
+	for (let i = 1; i <= 5; i++) {
+		age = +prompt(`请输入第${i}个年龄`);
+		let isAge = age !== 0 && age <= 100;
+		if (!isNaN(age) && isAge) {
+			ages.push(age);
+		}
+	}
+	document.write(`<div>年龄${ages}</div>`);
+	for (let i = 0; i < ages.length; i++) {
+		if (ages[i] >= adult) {
+			document.write(`<span>${ages[i]},</span>`);
+		}
+		sum = sum + ages[i];
+		max = ages[0];
+		min = ages[0];
+		if (max > ages[i]) {
+			max = ages[i];
+		}
+		if (min < ages[i]) {
+			min = ages[i];
+		}
+	}
+	console.log(ages);
+	document.write(`<div>年龄的总和值是${sum}</div>`);
+	document.write(`<div>年龄的平均值是${sum / ages.length}</div>`);
+	document.write(`<div>年龄最大的是${max}</div>`);
+	document.write(`<div>年龄最小的是${min}</div>`);
+</script>
+</body>
+</html>
