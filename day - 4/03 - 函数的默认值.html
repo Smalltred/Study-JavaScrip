@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	function getSum(num1 = 0, num2 = 0) {
+		if (!isNaN(num1) && !isNaN(num2)) {
+			let sum = num1 + num2;
+			document.write(`${num1}和${num2}的和是${sum}<br>`);
+		} else {
+			document.write(`让你输入两个数，你干啥呢`);
+		}
+	}
+	
+	let num1 = +prompt('请输入第一个数');
+	let num2 = +prompt('请输入第二个数');
+	getSum(num1, num2);
+</script>
+</body>
+</html>

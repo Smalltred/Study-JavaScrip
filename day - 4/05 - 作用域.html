@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 作用域 分为 全局作用域 和 局部作用域
+	// 全局作用域只在script标签内或者整个js文件中有效
+	// 局部作用域只在函数代码块的内部有用
+	
+	// 全局变量 let 在全局内任何区域都可以修改
+ 	let num = 10;
+	 function fn() {
+		 console.log(num);
+	 }
+	 fn()
+	
+	// 局部变量 let
+	function fun() {
+		 let str = '何';
+		console.log(str);
+	}
+	
+	fun()
+	// console.log(str); 未定义变量
+	
+	// 局部变量 i 只在代码块里使用
+	for (let i = 0; i < 10; i++) {
+		console.log(i);
+	}
+	// console.log(i); 未定义变量
+</script>
+</body>
+</html>

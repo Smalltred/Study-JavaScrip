@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// function getSum(end) {
+	// 	let sum = 0;
+	// 	for (let i = 1; i <= end; i++) {
+	// 		sum += i;
+	// 	}
+	// 	document.write(`1到${end}的累加是${sum}`);
+	// }
+	//
+	// getSum(564623);
+	function getSum(start, end) {
+		// start , end 是形参 形式上的参数 实参就是给这两个变量赋值 只在函数内有效
+		let sum = 0;
+		for (let i = start; i <= end; i++) {
+			sum += i;
+		}
+		document.write(`${start}到${end}的累加是${sum}`);
+	}
+	
+	getSum(200, 400);  // 实参 调用小括号里面的参数叫实参
+	getSum(100, 400);  // 实参 实际的参数
+	
+</script>
+</body>
+</html>

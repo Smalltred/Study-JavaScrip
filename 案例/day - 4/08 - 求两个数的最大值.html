@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// function getMax(num1 = 0, num2 = 0) {
+	// 	if (num1 > num2) {
+	// 		return num1;
+	// 	} else {
+	// 		return num2;
+	// 	}
+	// }
+	function getMax(num1 = 0, num2 = 0) {
+		return num1 > num2 ? num1 : num2
+	}
+	
+	let num1 = +prompt('请输入第一个数');
+	let num2 = +prompt('请输入第二个数');
+	let max = getMax(num1, num2);
+	document.write(`${num1} 和 ${num2} 之间的最大值是 ${max}`);
+</script>
+</body>
+</html>

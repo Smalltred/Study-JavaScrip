@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const arr1 = [27, 12, 89, 54, 75, 3, 48, 91, 67, 33, 100];
+	const arr2 = [86, 29, 14, 63, 44, 2, 70, 95, 57, 41, 90];
+	
+	// 数组最大值
+	function getArrValueMax(arr = []) {
+		let max = arr[0];
+		for (let i = 0; i < arr.length; i++) {
+			if (max < arr[i]) {
+				max = arr[i];
+			}
+		}
+		return max;
+	}
+	
+	// 数组最小值
+	function getArrValueMin(arr = []) {
+		let min = arr[0];
+		for (let i = 0; i < arr.length; i++) {
+			if (min > arr[i]) {
+				min = arr[i];
+			}
+		}
+		return min;
+	}
+	
+	// 通用方法 返回 最大最小值的数组
+	function getArrVale(arr = []) {
+		let min = arr[0];
+		let max = arr[0];
+		for (let i = 0; i < arr.length; i++) {
+			if (max < arr[i]) {
+				max = arr[i];
+			}
+			if (min > arr[i]) {
+				min = arr[i];
+			}
+		}
+		return [min, max];
+	}
+	
+	console.log(getArrValueMax(arr1));
+	console.log(getArrValueMin(arr1));
+	console.log(getArrValueMax(arr2));
+	console.log(getArrValueMin(arr2));
+	console.log(getArrVale(arr1));
+	console.log(getArrVale(arr2));
+</script>
+</body>
+</html>

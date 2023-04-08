@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 逻辑中断
+	// 逻辑短路
+	// 只存在于 && || 与 或
+	// 当满足一定的条件让右边的代码不执行
+	function func(x, y) {
+		x = x || 0;
+		y = y || 0;
+		console.log(x + y);
+	}
+	
+	// func(1, 2);
+	// func()
+	
+	
+	// 逻辑 与 短路
+	// 因为 && 前面是false了 后面就不会执行了 一假则假
+	// console.log( false && 1 + 1);
+	// 如果前面为true 就会返回 1 + 1 的值
+	// console.log(true && 1 + 1);
+	// 逻辑 或 短路
+	// 因为前面为 false 后面为 true 所以返回后的值 一真则真
+	console.log(false || 1 + 1);
+	// 如果前面为true 就会直接返回 true 后面 1 + 1就不会执行
+	console.log(true || 1 + 1);
+	
+	console.log(undefined = undefined || 0);
+</script>
+</body>
+</html>

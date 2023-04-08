@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	function getSum(n = 0, m = 0) {
+		let sum = 0;
+		for (let i = n; i <= m; i++) {
+			sum += i;
+		}
+		document.write(`${n}到${m}的累加是${sum}<br>`);
+	}
+	getSum(1, 10)
+	getSum(1, 100)
+	getSum(2, 5)
+	getSum()
+</script>
+</body>
+</html>

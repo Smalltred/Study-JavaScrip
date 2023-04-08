@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 使用场景 避免对全局变量的污染
+	(function () {
+		let num = 10;
+		console.log(num);
+	})();
+	
+	(function () {
+		let num = 20;
+		console.log(num);
+	}());
+	
+	(function (x = 0, y = 0) {
+		let sum = x + y;
+		console.log(sum);
+	}(10, 20));
+	
+	
+	(function (x = 0, y = 0) {
+		let sum = x + y;
+		console.log(sum);
+	})(100, 100);
+	
+	// (匿名函数体(形参) {})(实参)
+	// (匿名函数体(形参) {}(实参))
+</script>
+</body>
+</html>

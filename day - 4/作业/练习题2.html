@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<!-- **目的:**  封装函数, 复习函数的基本写法。 -->
+<!-- **需求：**实现两个数的值交换(函数版本)   -->
+<!-- **分析:** -->
+<!-- 1. 函数名为 changeNum() -->
+<!-- 2. 调用函数时,  `changeNum(1，2)` -->
+<!-- 3. 经过函数内部处理后,输出  `第一个值的结果是2  第二个值的结果是1` -->
+<!-- 4. 可以多调用两次 -->
+<script>
+	function changeNum(x, y) {
+		let temp = x;
+		x = y;
+		y = temp;
+		return `第一个值的结果是${x}  第二个值的结果是${y}<br>`;
+	}
+	
+	let x = +prompt('第一个数');
+	let y = +prompt('第二个数');
+	let result = changeNum(x, y);
+	document.write(result);
+	document.write(result);
+	document.write(result);
+</script>
+</body>
+</html>

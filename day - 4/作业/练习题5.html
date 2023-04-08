@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<!-- 需求：  封装 some 函数查看数组是否存在某个元素  。 -->
+<!-- - 要传递2个参数 元素、数组 -->
+<!-- - 如果数组存在元素则返回true，如果没有存在元素就返回 false -->
+<!-- 例如检测 香蕉  是否存在于  数组['苹果', '香蕉', '橘子', '荔枝', '梨子']中， 返回结果是 true -->
+<script>
+	function some(element, arr) {
+		element = element || 0;
+		arr = arr || [];
+		let flag = false;
+		let len = 0;
+		for (let i = 0; i < arr.length; i++) {
+			if (element === arr[i]) {
+				flag = true;
+				len++;
+			}
+		}
+		return flag;
+	}
+	
+	const fruits = ['苹果', '香蕉', '橘子', '荔枝', '梨子'];
+	const numbers = [27, 12, 89, 54, 75, 3, 48, 91, 67, 33, 100, 1, 1];
+	const element = 1;
+	let result = some(element, numbers);
+	console.log(result);
+</script>
+</body>
+</html>

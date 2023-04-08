@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 隐式转换
+	console.log('' + 1); // '1'
+	console.log('1' + 1); // '11'
+	console.log('' - 1); // '1'
+	console.log('22' - 1); // 21
+	console.log(null + 1); // 1  null转为数字是 0
+	// undefined 和 NaN 做运算都为 NaN 同样的 NaN也是
+	console.log(undefined + 1); // NaN
+	
+	// 显式转换
+	console.log(+'123'); // 123
+	console.log(parseInt('123')); // 123
+	console.log(Number('123')); // 123
+	
+	// 特殊情况
+	// null 的值和 undefined 的值是一样的 也就是说 ==
+	console.log(null == undefined); // true
+	console.log(null === undefined); // false 类型不一致
+</script>
+</body>
+</html>

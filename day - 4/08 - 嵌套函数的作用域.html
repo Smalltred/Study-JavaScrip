@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	
+	let num = 10;
+	function func() {
+		let num = 20; // 就近原则 先查找当前作用域的变量  从func函数作用域中查询num 如果没有， 则向上层{全局变量}作用域查询
+		console.log(num);
+		function fun() {
+			let num = 30; // 就近原则 先查找当前作用域的变量  从fun函数作用域中查询num 如果没有， 则向上层{外层函数内作用域}查询
+			console.log(num);
+		}
+		fun()
+	}
+	
+	func()
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const arr1 = [27, 12, 89, 54, 75, 3, 48, 91, 67, 33];
+	const arr2 = [86, 29, 14, 63, 44, 2, 70, 95, 57, 41];
+	
+	function getSum(arr = []) {
+		let sum = 0;
+		for (let i = 0; i < arr.length; i++) {
+			sum += arr[i];
+		}
+		document.write(`[${arr}]的和是${sum}<br>`);
+	}
+	
+	getSum(arr1);  // 实参可以是变量
+	getSum(arr2);
+	getSum([42, 73, 9, 98, 56, 24, 67, 5, 80, 37]);  // 也可以是实际的参数
+	getSum()
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		.btnBox {
+			display: flex;
+			justify-content: flex-start;
+			width: 200px;
+			height: 40px;
+		}
+		
+		.btn {
+			width: 60px;
+			height: 30px;
+			margin: 10px;
+			text-align: center;
+			line-height: 30px;
+			border-radius: 7px;
+			cursor: pointer;
+		}
+		
+		.l {
+			background-color: pink;
+		}
+		
+		.r {
+			background-color: aqua;
+		}
+	</style>
+</head>
+<body>
+<div class="btnBox">
+	<div class="l btn" onclick="sayHi()">按钮1</div>
+	<div class="r btn" onclick="sayHi()">按钮2</div>
+</div>
+<script>
+	// 函数的声明
+	// function funcName() { }
+	function sayHi() {
+		console.log('hi');
+	}
+	
+	// 函数调用 调用后才能执行 函数名()
+	sayHi();
+	
+	function fn(a, b) {
+		console.log(a + b);
+	}
+	
+	// 两个相同的函数名，后者会覆盖前者
+	// function fn(a, b) {
+	// 	console.log(a + b);
+	// }
+	//
+	// console.log(fn(1, 2));
+	//
+	// 1.实参多于形参 多出来的参与运算
+	// 2.实参少于形参 基本来的结果是 1 + undefined = NaN
+	console.log(fn(1));
+</script>
+</body>
+</html>

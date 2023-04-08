@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	function fn() {
+		// 局部变量 num
+		let num = 10;
+		console.log(num);
+		
+	}
+	
+	fn();
+	
+	// 特殊情况
+	function fun() {
+		// 没用直接声明变量
+		num = 10; // 当 局部变量看 实际上是一个全局变量，因为js会直接创建一个全局的num变量，并声明 undefined 当函数执行则赋值
+	}
+	
+	fun();
+	console.log(num);
+	
+	//
+	function func(x = 0, y = 0) {
+		console.log(x + y);
+	}
+	
+	func(1, 2);
+	// console.log(x, y); // 函数内的形参是局部变量 在函数内部有效
+	
+</script>
+</body>
+</html>

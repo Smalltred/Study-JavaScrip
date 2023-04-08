@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<!-- **目标：**求和函数封装练习 -->
+<!-- **要求:** -->
+<!-- 1. 封装函数, 名字为sum -->
+<!-- 2. 功能: 根据传入的两个数,求和并且返回求和的结果（函数必须有return返回值） -->
+<script>
+	function sum(x, y) {
+		x = x || 0;
+		y = y || 0;
+		return x + y;
+		
+	}
+	
+	let x = +prompt('第一个数');
+	let y = +prompt('第二个数');
+	document.write(`${x}和${y}的和是${sum(x, y)}`);
+</script>
+</body>
+</html>

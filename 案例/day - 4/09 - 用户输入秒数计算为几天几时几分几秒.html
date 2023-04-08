@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	let second = +prompt('请输入任意秒数');
+	
+	// Math.floor 将浮点数转为一个整数
+	function getTime(t) {
+		let s = Math.floor(t % 60);
+		let m = Math.floor(t / 60 % 60);
+		let h = Math.floor(t / 60 / 60 % 24);
+			let d = Math.floor(t / 60 / 60 / 60);
+		s = s < 10 ? '0' + s : s;
+		m = m < 10 ? '0' + m : m;
+		h = h < 10 ? '0' + h : h;
+		d = d < 10 ? '0' + d : d;
+		return `计算后的时间是${d}天${h}小时${m}分钟${s}秒`;
+	}
+	document.write(getTime(second));
+</script>
+</body>
+</html>

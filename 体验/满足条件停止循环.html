@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	function func() {
+		while (1) {
+			let num = +prompt('请输入一个不为0的数');
+			if (!isNaN(num) && num !== 0) {
+				document.write(`这个数是${num}`);
+				break;
+			}
+		}
+	}
+	
+	func();
+</script>
+</body>
+</html>

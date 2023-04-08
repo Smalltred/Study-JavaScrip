@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 函数表达式
+	// 函数表达式 遵循变量原则 先声明后使用
+	let fn = function (x = 0, y = 0) {
+		let sum = x + y;
+		console.log(sum);
+	};
+	fn(1, 10);
+	
+	// 具名函数
+	// 可以把调用写到函数前面 或者 后面 都可以 ，函数提升
+	func(10, 20);
+	
+	function func(x = 0, y = 0) {
+		let sum = x + y;
+		console.log(sum);
+	}
+	
+	func(10, 10);
+</script>
+</body>
+</html>
