@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	let applePhone = {
+		brand: 'Apple',
+		model: 'iPhone 13 Pro Max',
+		color: 'Graphite',
+		storage: 512,
+		price: 1599.00,
+		screenSize: 6.7,
+		releaseYear: 2021,
+		is5G: true,
+		isWaterproof: true,
+		camera: {
+			front: {
+				resolution: '12MP',
+				aperture: 'f/2.2',
+				video: '4K Dolby Vision HDR',
+			},
+			back: {
+				resolution: '12MP',
+				aperture: 'f/1.5, f/2.8',
+				video: '4K Dolby Vision HDR',
+				features: ['Night mode', 'Deep Fusion', 'Sensor-shift optical image stabilization'],
+			},
+		},
+	};
+	
+	// 对象属性的修改
+	// 对象.属性 = 新值
+	applePhone.price = 12000;
+	console.log(applePhone);
+</script>
+</body>
+</html>

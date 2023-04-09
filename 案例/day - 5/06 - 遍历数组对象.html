@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+		}
+		
+		table, td, th {
+			text-align: center;
+			border: 1px solid black;
+		}
+		
+		td, th {
+			width: 100px;
+			padding: 5px;
+		}
+		
+		table td {
+			width: 200px;
+			height: 10px;
+			text-align: center;
+		}
+		
+		thead tr:nth-child(1) {
+			background-color: #ddd;
+		}
+		
+		tbody tr:hover {
+			background-color: #eee;
+		}
+	</style>
+</head>
+<body>
+<script>
+	const students = [
+		{name: '小红', age: 33, gender: '女', hometown: '辽宁省'},
+		{name: '小明', age: 21, gender: '男', hometown: '江苏省'},
+		{name: '小强', age: 20, gender: '男', hometown: '山东省'},
+		{name: '小丽', age: 38, gender: '女', hometown: '湖南省'},
+		{name: '小李', age: 44, gender: '女', hometown: '广东省'},
+		{name: '小兰', age: 42, gender: '女', hometown: '浙江省'},
+		{name: '小明', age: 29, gender: '男', hometown: '河北省'},
+		{name: '小红', age: 32, gender: '女', hometown: '福建省'},
+		{name: '小刘', age: 30, gender: '男', hometown: '山东省'},
+		{name: '小丽', age: 28, gender: '女', hometown: '陕西省'}
+	];
+	let thArr = ['序号', '姓名', '年龄', '性别', '家乡'];
+	let body = document.body;
+	let table = document.createElement('table');
+	
+	let thead = document.createElement('thead');
+	let thTr = document.createElement('tr');
+	for (let i = 0; i < thArr.length; i++) {
+		// 添加表头
+		let th = document.createElement('th');
+		th.innerHTML = thArr[i];
+		thTr.appendChild(th);
+	}
+	thead.appendChild(thTr);
+	table.appendChild(thead);
+	
+	let tbody = document.createElement('tbody');
+	for (let i = 0; i < students.length; i++) {
+		let tr = document.createElement('tr');
+		if (i === 0) {
+			// 创建表头单元格
+			tbody.appendChild(tr);
+		}
+		// 创建表格单元格
+		let td = document.createElement('td');
+		td.innerHTML = i + 1;
+		tr.appendChild(td);
+		for (let key in students[i]) {
+			let td = document.createElement('td');
+			td.innerHTML = students[i][key];
+			tr.appendChild(td);
+		}
+		tbody.appendChild(tr);
+	}
+	table.appendChild(tbody);
+	body.appendChild(table);
+	console.log(students);
+</script>
+</body>
+</html>

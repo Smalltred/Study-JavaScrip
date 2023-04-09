@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// Math.random()
+	// 返回的范围是 0 <= x < 1
+	// [0, 1)
+	// console.log(Math.random());
+	// 范围
+	console.log(Math.floor(Math.random() * (10 + 1)));
+	console.log(Math.random() * 10); // 0 ~ 9.xxxxx 取不到10
+	console.log(Math.random() * (10 + 1)); // 0 ~ 10.xxxx 取不到11
+	// 0 ~ 10 的随机数
+	console.log(Math.floor(Math.random() * (10 + 1)));  // Math.floor 取下取整数
+	// 随机颜色
+	const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink', 'brown', 'gray', 'black', 'white'];
+	
+	let random = Math.floor(Math.random() * colors.length);
+	console.log(random);
+	console.log(colors[random]);
+	
+	
+	// 5 ~ 10 的随机数
+	console.log(Math.floor(Math.random() * (5 + 1)) + 5);  // 先取 0 - 5 随机一个，加上5那么随机说大于 5
+	
+	// N ~ M 的随机数
+	// console.log(Math.floor(Math.random()) * (M - N + 1) + N);
+	console.log(Math.floor(Math.random() * (100 - 1 + 1)) + 1);
+	
+</script>
+</body>
+</html>

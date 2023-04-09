@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		table {
+			width: 1000px;
+			margin: 50px auto;
+			border-collapse: collapse;
+		}
+		
+		table, td, th {
+			text-align: center;
+			border: 1px solid #ccc;
+		}
+		
+		th {
+			background-color: #f5f5f5;
+		}
+		
+		td, th {
+			width: 100px;
+			padding: 10px;
+		}
+		
+		
+		tr:not(thead tr):hover {
+			background-color: #eee;
+		}
+		
+		table tbody:nth-child(3) {
+			height: 120px;
+		}
+		
+		table tbody:nth-child(3) span {
+			color: #999;
+		}
+		
+		tfoot span {
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+	</style>
+</head>
+<body>
+<table id="table">
+	<thead>
+		<tr>
+			<th>编号</th>
+			<th>科目</th>
+			<th>成绩</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+	<tfoot></tfoot>
+</table>
+<script>
+	let data = [
+		{subject: '语文', score: 46},
+		{subject: '数学', score: 80},
+		{subject: '英语', score: 100},
+	];
+	
+	let score = 0;
+	const tableBody = document.querySelector('#table tbody');
+	const tableFoot = document.querySelector('#table tfoot');
+	
+	// 渲染表格
+	for (let i = 0; i < data.length; i++) {
+		const tr = document.createElement('tr');
+		tr.innerHTML = `<td>${i + 1}</td><td>${data[i].subject}</td><td>${data[i].score}</td><td><a href="#">删除</a></td>`;
+		tableBody.appendChild(tr);
+		score += data[i].score;
+	}
+	
+	// 渲染表格底部
+	if (data.length === 0) {
+		const noneRow = document.createElement('tr');
+		noneRow.innerHTML = `<td colspan="4"><span class="none">暂无数据</span></td>`;
+		tableBody.appendChild(noneRow);
+	} else {
+		const totalScore = document.createElement('span');
+		const avgScore = document.createElement('span');
+		totalScore.innerText = `总分: ${score}`;
+		avgScore.innerText = `平均分: ${score / data.length}`;
+		const td = document.createElement('td');
+		td.setAttribute('colspan', '4');
+		td.appendChild(totalScore);
+		td.appendChild(avgScore);
+		const tr = document.createElement('tr');
+		tr.appendChild(td);
+		tableFoot.appendChild(tr);
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<!-- 猜数字游戏，设定次数，最多猜8次 -->
+<script>
+	let random = Math.floor(Math.random() * 21);
+	let flag = true;
+	for (let i = 0; i < 8; i++) {
+		let num = +prompt('请猜一个数哦，最多猜八次');
+		if (num > random) {
+			alert('您猜大了哟');
+		}
+		if (num < random) {
+			alert('您猜小了哟');
+		}
+		if (num === random) {
+			flag = false;
+			alert('您猜对了哟');
+			break;
+		}
+	}
+	if (flag) {
+		alert('您的次数用完了哟')
+	}
+</script>
+</body>
+</html>

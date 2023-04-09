@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+		}
+		
+		table, td, th {
+			text-align: center;
+			border: 1px solid black;
+		}
+		
+		td, th {
+			width: 100px;
+			padding: 5px;
+		}
+		
+		table td {
+			width: 200px;
+			height: 10px;
+			text-align: center;
+		}
+		
+		thead tr:nth-child(1) {
+			background-color: #ddd;
+		}
+		
+		tbody tr:hover {
+			background-color: #eee;
+		}
+	</style>
+	<script>
+		let students = [
+			{name: '小红', age: 33, gender: '女', hometown: '辽宁省'},
+			{name: '小明', age: 21, gender: '男', hometown: '江苏省'},
+			{name: '小强', age: 20, gender: '男', hometown: '山东省'},
+			{name: '小丽', age: 38, gender: '女', hometown: '湖南省'},
+			{name: '小李', age: 44, gender: '女', hometown: '广东省'},
+			{name: '小兰', age: 42, gender: '女', hometown: '浙江省'},
+			{name: '小明', age: 29, gender: '男', hometown: '河北省'},
+			{name: '小红', age: 32, gender: '女', hometown: '福建省'},
+			{name: '小刘', age: 30, gender: '男', hometown: '山东省'},
+			{name: '小丽', age: 28, gender: '女', hometown: '陕西省'}
+		];
+		let thArr = ['序号', '姓名', '年龄', '性别', '家乡'];
+		
+		document.write('<table>')
+		document.write('<thead><tr>');
+		for (let i = 0; i < thArr.length; i++) {
+			document.write(`<th>${thArr[i]}</th>`);
+		}
+		document.write('</tr></thead>');
+		
+		document.write('<tbody>');
+		for (let i = 0; i < students.length; i++) {
+			document.write(`<tr>`)
+			document.write(`<td>${i + 1}</td>`);
+			document.write(`<td>${students[i].name}</td>`);
+			document.write(`<td>${students[i].age}</td>`);
+			document.write(`<td>${students[i].gender}</td>`);
+			document.write(`<td>${students[i].hometown}</td>`);
+			document.write('</tr>');
+		}
+		document.write('</tbody>');
+		document.write('</table>');
+	</script>
+</head>
+<body>
+</body>
+</html>

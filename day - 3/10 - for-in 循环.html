@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const randomNumbers = [23, 45, 12, 78, 89, 34, 99, 55, 1, 67];
+	for (let randomNumbersKey in randomNumbers) {
+		// randomNumbersKey 是字符串型的 不建议拿来遍历数组
+		console.log(randomNumbersKey);
+		console.log(randomNumbers[randomNumbersKey]);
+	}
+</script>
+</body>
+</html>

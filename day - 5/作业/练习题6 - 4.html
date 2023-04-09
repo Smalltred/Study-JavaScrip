@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		table {
+			width: 1000px;
+			margin: 50px auto;
+			border-collapse: collapse;
+		}
+		
+		table, td, th {
+			text-align: center;
+			border: 1px solid #ccc;
+		}
+		
+		th {
+			background-color: #f5f5f5;
+		}
+		
+		td, th {
+			width: 100px;
+			padding: 10px;
+		}
+		
+		
+		tr:not(thead tr):hover {
+			background-color: #eee;
+		}
+		
+		table tbody tr:nth-child(4) {
+			height: 120px;
+		}
+		
+		table tbody:nth-child(3) span {
+			color: #999;
+		}
+		
+		tfoot span {
+			margin-left: 30px;
+			margin-right: 30px;
+		}
+	</style>
+</head>
+<body>
+<table id="table">
+	<thead>
+		<tr>
+			<th>编号</th>
+			<th>科目</th>
+			<th>成绩</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+	<tfoot></tfoot>
+</table>
+<script>
+	let data = [
+		{subject: '语文', score: 46},
+		{subject: '数学', score: 80},
+		{subject: '英语', score: 100},
+	];
+	let score = 0;
+	let tbody = document.querySelector('tbody');
+	let tfoot = document.querySelector('tfoot');
+	let tr1 = document.createElement('tr');
+	let tr2 = document.createElement('tr');
+	
+	for (let i = 0; i < data.length; i++) {
+		let tr = document.createElement('tr');
+		tr.innerHTML = `<td>${i + 1}</td><td>${data[i].subject}</td><td>${data[i].score}</td><td><a href="#">删除</a></td>`;
+		tbody.appendChild(tr);
+		score += data[i].score;
+	}
+	
+	tr2.innerHTML = `<td colspan="5"><span>总分：${score}</span><span>平均分：${score / data.length}</span></td>`;
+	tfoot.appendChild(tr2);
+	
+	tr1.innerHTML = `<td colspan="5"><span>暂无数据</span></td>`;
+	tbody.appendChild(tr1);
+</script>
+</body>
+</html>

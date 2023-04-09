@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		a {
+			text-decoration: none;
+		}
+		
+		li {
+			list-style-type: none;
+		}
+		
+		.warp {
+			width: 1200px;
+			margin-top: 30px;
+		}
+		
+		.warp {
+			margin: 30px auto;
+		}
+		
+		.warp {
+			margin-bottom: auto;
+		}
+		
+		.warp .box-head {
+			display: flex;
+			justify-content: space-between;
+			height: 45px;
+		}
+		
+		.box-head .head-title {
+			font-size: 20px;
+			font-weight: bold;
+			color: #494949;
+		}
+		
+		.box-head .head-add a {
+			font-size: 12px;
+			color: #a5a5a5;
+		}
+		
+		.warp .box-body {
+		
+		}
+		
+		.box-body ul {
+			display: flex;
+			flex-wrap: wrap;
+			width: 1225px;
+		}
+		
+		.box-body ul li {
+			position: relative;
+			top: 0;
+			width: 228px;
+			height: 270px;
+			background-color: #fff;
+			margin-right: 15px;
+			margin-bottom: 15px;
+			transition: all .3s;
+		}
+		
+		.box-body ul li:hover {
+			top: -8px;
+			box-shadow: 0 15px 30px rgb(0 0 0 / 10%);
+		}
+		
+		.box-body ul li a {
+			display: block;
+		}
+		
+		.box-body img {
+			width: 100%;
+			vertical-align: middle;
+		}
+		
+		.video-title {
+			height: 40px;
+			margin: 20px 20px 20px 25px;
+			color: #050505;
+			font-size: 14px;
+			font-weight: 400;
+		}
+		
+		.video-info {
+			margin-left: 20px;
+			color: #999;
+			text-align: left;
+			font-size: 12px;
+		}
+		
+		.video-info span {
+			color: #ff7c2d;
+		}
+		
+		
+		.box-body
+	</style>
+</head>
+<body>
+<div class="warp">
+	<div class="box-head">
+		<div class="head-title">
+			精品推荐
+		</div>
+		<div class="head-add">
+			<a href="#">查看全部</a>
+		</div>
+	</div>
+	<div class="box-body">
+		<ul>
+			<li>
+				<a href="#"> <img src="images/course01.png" alt="">
+					<div class="video-title">
+						Think PHP 5.0 博客系统实战项目演练
+					</div>
+					<div class="video-info">
+						<span>高级</span> • <span>1125</span> 人在学习
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#"> <img src="images/course01.png" alt="">
+					<div class="video-title">
+						Think PHP 5.0 博客系统实战项目演练
+					</div>
+					<div class="video-info">
+						<span>高级</span> • <span>1125</span> 人在学习
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#"> <img src="images/course01.png" alt="">
+					<div class="video-title">
+						Think PHP 5.0 博客系统实战项目演练
+					</div>
+					<div class="video-info">
+						<span>高级</span> • <span>1125</span> 人在学习
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#"> <img src="images/course01.png" alt="">
+					<div class="video-title">
+						Think PHP 5.0 博客系统实战项目演练
+					</div>
+					<div class="video-info">
+						<span>高级</span> • <span>1125</span> 人在学习
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#"> <img src="images/course01.png" alt="">
+					<div class="video-title">
+						Think PHP 5.0 博客系统实战项目演练
+					</div>
+					<div class="video-info">
+						<span>高级</span> • <span>1125</span> 人在学习
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#"> <img src="images/course01.png" alt="">
+					<div class="video-title">
+						Think PHP 5.0 博客系统实战项目演练
+					</div>
+					<div class="video-info">
+						<span>高级</span> • <span>1125</span> 人在学习
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#"> <img src="images/course01.png" alt="">
+					<div class="video-title">
+						Think PHP 5.0 博客系统实战项目演练
+					</div>
+					<div class="video-info">
+						<span>高级</span> • <span>1125</span> 人在学习
+					</div>
+				</a>
+			</li>
+			<li>
+				<a href="#"> <img src="images/course01.png" alt="">
+					<div class="video-title">
+						Think PHP 5.0 博客系统实战项目演练
+					</div>
+					<div class="video-info">
+						<span>高级</span> • <span>1125</span> 人在学习
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<script>
+	let data = [
+		{
+			src: 'images/course01.png',
+			title: 'Think PHP 5.0 博客系统实战项目演练',
+			num: 1125
+		},
+		{
+			src: 'images/course02.png',
+			title: 'Android 网络动态图片加载实战',
+			num: 357
+		},
+		{
+			src: 'images/course03.png',
+			title: 'Angular2 大前端商城实战项目演练',
+			num: 22250
+		},
+		{
+			src: 'images/course04.png',
+			title: 'Android APP 实战项目演练',
+			num: 389
+		},
+		{
+			src: 'images/course05.png',
+			title: 'UGUI 源码深度分析案例',
+			num: 124
+		},
+		{
+			src: 'images/course06.png',
+			title: 'Kami2首页界面切换效果实战演练',
+			num: 432
+		},
+		{
+			src: 'images/course07.png',
+			title: 'UNITY 从入门到精通实战案例',
+			num: 888
+		},
+		{
+			src: 'images/course08.png',
+			title: 'Cocos 深度学习你不会错过的实战',
+			num: 590
+		},
+	];
+	
+	let a = document.querySelectorAll('.box-body li a');
+	for (let i = 0; i < data.length; i++) {
+		let img = a[i].querySelector('img');
+		let title = a[i].querySelector('.video-title');
+		let num = a[i].querySelector('.video-info span:nth-child(2)');
+		img.src = data[i].src;
+		img.alt = data[i].title
+		img.title = data[i].title
+		title.innerHTML = data[i].title;
+		num.innerHTML = data[i].num;
+	}
+</script>
+</body>
+</html>

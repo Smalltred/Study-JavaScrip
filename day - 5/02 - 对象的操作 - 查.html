@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 声明了一个对象
+	let applePhone = {
+		'goods-name': '苹果手机',
+		brand: 'Apple',
+		model: 'iPhone 13 Pro Max',
+		color: 'Graphite',
+		storage: 512,
+		price: 1599.00,
+		screenSize: 6.7,
+		releaseYear: 2021,
+		is5G: true,
+		isWaterproof: true,
+		camera: {
+			front: {
+				resolution: '12MP',
+				aperture: 'f/2.2',
+				video: '4K Dolby Vision HDR',
+			},
+			back: {
+				resolution: '12MP',
+				aperture: 'f/1.5, f/2.8',
+				video: '4K Dolby Vision HDR',
+				features: ['Night mode', 'Deep Fusion', 'Sensor-shift optical image stabilization'],
+			},
+		},
+	};
+	
+	// 对象的查询操作
+	console.log(applePhone.brand);
+	console.log(applePhone.model);
+	
+	// 第二种方法
+	// 'goods-name': '苹果手机', 这种对象的属性采用第二种方法
+	console.log(applePhone['goods-name']);
+</script>
+</body>
+</html>

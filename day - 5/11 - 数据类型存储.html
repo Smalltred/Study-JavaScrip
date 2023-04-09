@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 简单数据类型 有 string number undefined null
+	let num1 = 10;
+	let num2 = num1;
+	num1 = 20;
+	console.log(num1);  // ？
+	// num1 = 10 因为 简单数据类是存放在内存栈里面
+	// 存储这个变量值
+	// 当把num1 赋值给 num2 时，只是把num1的值传递给了num2 开辟了新的空间的来存储这个num2
+	// 他们的内存地址自然就不相同
+	
+	// 复杂数据类型 有 obj arr date
+	let obj1 = {age: 18};
+	let obj2 = obj1;
+	obj2.age = 16;
+	console.log(obj1); // ?
+	// obj1 = {age: 16} 因为 复杂数据类型是存在堆里面的
+	// 储存这个对象
+	// 当把obj1 赋值给 obj2 时，obj2此时是引用的obj1对象，在堆的内部是引用传递，并没有开辟一个新的空间来存储obj2
+	// 他们的内存地址相同
+	
+	
+</script>
+</body>
+</html>

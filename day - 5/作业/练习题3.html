@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<!-- 调用对象的方法 -->
+<!-- 目的: 复习对象的使用 -->
+<!-- 要求: -->
+<!-- 1. 对象声明完毕后, 调用对象中的吃饭的方法 -->
+<!-- 2. 提示: 对象中的方法本质是函数, 调用需要加() -->
+<!-- 3. 方法也可以传递参数的 -->
+<script>
+	let pre = {
+		name: '王德发',
+		gender: '男',
+		age: 18,
+		hobby: '打篮球',
+		say: function (name, content) {
+			name = name || pre.name;
+			content = content || '话';
+			console.log(`${name}正在说${content}`);
+		},
+		eat: function (name, food) {
+			name = name || pre.name;
+			food = food || '东西';
+			console.log(`${name}正在吃${food}`);
+		}
+	};
+	
+	pre.eat('老八', '蜜汁小汉堡')
+</script>
+</body>
+</html>

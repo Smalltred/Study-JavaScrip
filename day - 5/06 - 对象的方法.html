@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 对象里面的叫方法 对象外面的叫函数
+	let obj = {
+		name: '蔡徐坤',
+		song: function (name) {
+			console.log(`${name}唱`);
+		},
+		rap: function (name) {
+			console.log(`${name}rap`);
+		},
+		playBasketball: function (name) {
+			console.log(`${name}打篮球`);
+		}
+	};
+	obj.rap(obj.name)
+</script>
+</body>
+</html>

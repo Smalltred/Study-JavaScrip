@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	function getRandom(n, m) {
+		n = n || 0;
+		m = m || 0;
+		return Math.floor(Math.random() * (m - n + 1) + n);
+	}
+	
+	let random = getRandom(1, 10);
+	console.log(random);
+	// for (let i = 1; i <= 3; i++) {
+	// 	let num = +prompt('从1-10猜一个数字哦');
+	// 	if (num > random) {
+	// 		alert('猜大了哦，继续猜');
+	// 	}
+	// 	if (num < random) {
+	// 		alert('猜小了哦，继续猜');
+	// 	}
+	// 	if (num === random) {
+	// 		alert('恭喜你猜中了');
+	// 		break;
+	// 	}
+	// 	if (i === 3) {
+	// 		alert('您的次数用完啦');
+	// 	}
+	// }
+	let flag = true;
+	for (let i = 1; i <= 3; i++) {
+		let num = +prompt('从1-10猜一个数字哦');
+		if (num > random) {
+			alert('猜大了哦，继续猜');
+		}
+		if (num < random) {
+			alert('猜小了哦，继续猜');
+		}
+		if (num === random) {
+			flag = false;
+			alert('恭喜你猜中了');
+			break;
+		}
+	}
+	if (flag) {
+		alert('您的次数用完啦');
+	}
+</script>
+</body>
+</html>

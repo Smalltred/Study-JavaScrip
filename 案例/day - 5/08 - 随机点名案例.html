@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	let names = ["刘备", "关羽", "张飞", "赵云", "马超", "黄忠", "诸葛亮", "庞统", "魏延", "姜维"];
+	let random = Math.floor(Math.random() * names.length);
+	document.write(names[random]);
+	names.splice(random, 1);
+	console.log(names);
+</script>
+</body>
+</html>

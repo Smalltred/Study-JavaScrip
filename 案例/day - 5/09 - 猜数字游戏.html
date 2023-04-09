@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// let random = Math.floor(Math.random() * (10 - 1 + 1) + 1)
+	function getRandom(n, m) {
+		n = n || 0;
+		m = m || 0;
+		return Math.floor(Math.random() * (m - n + 1) + n);
+	}
+	
+	let random = getRandom(1, 10);
+	while (1) {
+		let num = +prompt('从1-10猜一个数字哦');
+		if (num > random) {
+			alert('猜大了哦，继续猜');
+		}
+		if (num < random) {
+			alert('猜小了哦，继续猜');
+		}
+		if (num === random) {
+			alert('恭喜你猜中了');
+			break;
+		}
+	}
+</script>
+</body>
+</html>
