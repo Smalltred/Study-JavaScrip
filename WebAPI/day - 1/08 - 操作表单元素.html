@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<label> <input id="uname" type="text" value="电脑"> </label>
+<label> <input type="checkbox" id="checkbox" name=""> </label>
+<button>按钮</button>
+<script>
+	// 获取input
+	const uname = document.querySelector('#uname');
+	// 获取表单内容
+	console.log(uname.value);
+	// 修改表单内容
+	uname.value = '我要买rtx4090'
+	console.log(uname.type);
+	
+	// 获取复选框
+	const checkbox = document.querySelector('#checkbox');
+	// 默认复选框为未选择状态 false
+	console.log(checkbox.checked); // false
+	// 修改选择状态
+	checkbox.checked = true;
+	
+	// 获取按钮
+	const button = document.querySelector('button');
+	// 默认按钮可以点击 false
+	console.log(button.disabled);  // false
+	// 修改禁用按钮状态
+	button.disabled = true;
+</script>
+</body>
+</html>

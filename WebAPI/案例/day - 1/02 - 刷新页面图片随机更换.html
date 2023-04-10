@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<img src="images/1.webp" alt="">
+<script>
+	// const webpArray = [
+	// 	"1.webp",
+	// 	"2.webp",
+	// 	"3.webp",
+	// 	"4.webp",
+	// 	"5.webp",
+	// 	"6.webp"
+	// ];
+	//
+	// const random = Math.floor(Math.random() * webpArray.length);
+	// const img = document.querySelector('img');
+	// img.src = 'images/' + webpArray[random];
+	function getRandom(n, m) {
+		return Math.floor(Math.random() * (m - n + 1) + n);
+	}
+	
+	const random = getRandom(1, 6);
+	const img = document.querySelector('img');
+	img.src = `images/${random}.webp`
+</script>
+</body>
+</html>

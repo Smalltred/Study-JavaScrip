@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// setInterval(函数, 时间间隔)
+	
+	// setInterval(function () {
+	// 	console.log('一秒打印一次');
+	// }, 1000)
+	
+	function func() {
+		console.log('一秒打印一次');
+	}
+	
+	// 调用有名函数 不要加小括号
+	// 定时器返回一个数值型ID号
+	// let n = setInterval(func, 3000)
+	// console.log(n);
+	
+	// 两个定时器独一无二
+	let m = setInterval(func, 1000);
+	console.log(m);
+	// 关闭定时器
+	clearInterval(m);
+	// 非要加小括号的话
+	// setInterval('func()', 1000)
+	
+	let i = 0;
+	setInterval(function () {
+		i++
+		document.write(`${i}<br>`)
+	}, 1000)
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.box {
+			width: 840px;
+			height: 420px;
+			padding: 100px 250px;
+			background-image: url("images/bg01.jpg");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			box-sizing: border-box;
+			
+		}
+	</style>
+</head>
+<body>
+<div class="box">
+	<strong>抽奖案例</strong>
+	<h1>一等奖: <span class="one">xxx</span></h1>
+	<h3>二等奖: <span class="two">xxx</span></h3>
+	<h5>三等奖: <span class="three">xxx</span></h5>
+</div>
+<script>
+	const singerNames = ["周杰伦", "林俊杰", "王力宏", "张学友", "陈奕迅", "邓紫棋", "蔡依林", "张靓颖", "李宇春", "汪峰"];
+	console.log(singerNames);
+	const one = document.querySelectorAll('.box span');
+	for (let i = 0; i < 3; i++) {
+		const random = Math.floor(Math.random() * singerNames.length);
+		one[i].innerHTML = singerNames[random];
+		singerNames.splice(random, 1);
+		console.log(singerNames);
+	}
+</script>
+</body>
+</html>

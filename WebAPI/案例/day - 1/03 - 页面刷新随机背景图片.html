@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		body {
+			height: 100vh;
+			background-image: url("images/desktop_1.jpg");
+			background-repeat: no-repeat;
+			background-position: top center;
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+<script>
+	function getRandom(n, m) {
+		return Math.floor(Math.random() * (m - n + 1) + n);
+	}
+	
+	const random = getRandom(1, 10);
+	const body = document.body;
+	body.style.backgroundImage = `url(images/desktop_${random}.jpg)`
+</script>
+</body>
+</html>

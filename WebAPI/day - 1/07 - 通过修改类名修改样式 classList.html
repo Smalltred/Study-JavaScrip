@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.box {
+			width: 300px;
+			height: 300px;
+			color: cornflowerblue;
+		}
+		
+		.active {
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			padding: 10px;
+			background-color: pink;
+			border: 2px solid #999999;
+		}
+	</style>
+</head>
+<body>
+<div class="box active">我是一个盒子</div>
+<script>
+	// 获取类名
+	const box = document.querySelector('.box');
+	// 通过classList来添加
+	// add()不加. 并且是字符串
+	// box.classList.add('active')
+	// 删除类
+	// box.classList.remove('box')
+	// 切换类
+	// 如果没有则添加 如果有则移除
+	// box.classList.toggle('active')
+</script>
+</body>
+</html>

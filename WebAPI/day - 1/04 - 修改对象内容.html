@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<div class="box">我是一个盒子</div>
+<script>
+	// 修改对象内容
+	const obj = {
+		name: '我的世界'
+	};
+	console.log(obj.name);
+	obj.name = '英雄联盟'
+	console.log(obj.name);
+	
+	const box = document.querySelector('.box');
+	// 获取内容
+	console.log(box.innerText);
+	// 修改内容
+	// box.innerText = '我的世界'
+	// 不解析标签
+	// box.innerText = '<i>我的世界</i>'
+	
+	// 会识别标签
+	box.innerHTML = '<i>我的世界</i>'
+</script>
+</body>
+</html>

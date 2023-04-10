@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 以后推荐使用 const来声明
+	const arr = ['red', 'green', 'blue'];
+	const obj = {
+		name: '何',
+		age:10,
+		gender: '男'
+	}
+	arr = [1, 2, 4]  // 报错 常量不能被重新赋值
+	
+	// 不会改变 数组对象的栈的地址 ，修改的是栈的内存地址引用到堆里面的数组对象的值 故可以添加和修改
+	// 对象同理
+	arr.push('black');
+	console.log(arr);
+</script>
+</body>
+</html>

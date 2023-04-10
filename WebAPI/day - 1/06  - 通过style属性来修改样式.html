@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.box {
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+<div class="box">一个盒子</div>
+<script>
+	const div = document.querySelector('.box');
+	div.style.width = '200px';
+	// 带-号的属性用小驼峰命名法
+	div.style.backgroundColor = 'hotpink'
+	div.style.border = '2px solid red'
+	div.style.borderTop = '2px solid black'
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.box {
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+<div class="box">123</div>
+<div class="box">123</div>
+<div class="box" id="nav"></div>
+<ul class="nav">
+	<li>121</li>
+	<li>122</li>
+	<li>123</li>
+	<li>124</li>
+</ul>
+<script>
+	// css选择器
+	// 选择第一个 .box  css选择器
+	// const box = document.querySelector('.box')
+	// 选择第一个div
+	const box = document.querySelector('div');
+	// 选择id = nav 的对象
+	const nav = document.querySelector('#nav');
+	// 选择第一个小li
+	const li = document.querySelector('li');
+	// 选择ul中的第二个小li
+	const fli = document.querySelector('ul li:nth-child(2)');
+	console.log(box);
+	console.log(nav);
+	console.log(li);
+	console.log(fli);
+	
+	// 选择ul中的所有li
+	const lis = document.querySelectorAll('.nav li');
+	console.log(lis);
+	// 遍历ulli所有的li
+	for (let i = 0; i < lis.length; i++) {
+		console.log(lis[i]);
+		
+	}
+	
+</script>
+</body>
+</html>
