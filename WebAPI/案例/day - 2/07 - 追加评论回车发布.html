@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-family: 微软雅黑, serif;
+		}
+		
+		li {
+			list-style: none;
+		}
+		
+		a {
+			color: black;
+			text-decoration: none;
+		}
+		
+		body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		
+		.container {
+			width: 900px;
+			height: 50vh;
+		}
+		
+		.comment-box {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.warp {
+			display: flex;
+			justify-content: flex-end;
+			width: 800px;
+		}
+		
+		.avatar {
+			width: 42px;
+			height: 42px;
+			margin-right: 10px;
+			border-radius: 50%;
+			background-image: url("https://thirdqq.qlogo.cn/g?b=sdk&k=VTdtxlgjQ2ypzlTRzUweFA&s=640&t=1630524133");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+		
+		.warp textarea {
+			overflow-y: auto;
+			width: 500px;
+			height: 30px;
+			padding: 5px 10px;
+			font-size: 16px;
+			line-height: 30px;
+			outline: none;
+			resize: none;
+			border: 1px solid transparent;
+			border-radius: 7px;
+			background-color: rgb(241, 242, 243);
+			transition: height .3s;
+		}
+		
+		.warp textarea::placeholder {
+			font-size: 12px;
+			color: #b2aeae;
+		}
+		
+		.warp textarea:focus {
+			border: 1px solid #cccccc;
+		}
+		
+		.warp textarea:focus + button {
+			height: 71px;
+		}
+		
+		.warp button {
+			width: 80px;
+			height: 41px;
+			margin-left: 10px;
+			color: white;
+			font-size: 16px;
+			border-radius: 7px;
+			cursor: pointer;
+			background-color: rgb(159, 214, 245);
+			transition: .3s;
+		}
+		
+		.warp button:hover {
+			background-color: rgb(63, 173, 235);
+		}
+		
+		.count {
+			opacity: 0;
+			color: #cccccc;
+			margin-top: 10px;
+			margin-right: 90px;
+			transition: .3s;
+		}
+		
+		.list {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		.list .item {
+			display: flex;
+			justify-content: center;
+			width: 800px;
+			height: 120px;
+			margin-right: -120px;
+			margin-top: 40px;
+		}
+		
+		
+		.list .info {
+			width: 601px;
+		}
+		
+		.list .info .name {
+			color: #FB7299;
+			font-weight: bold;
+		}
+		
+		.list .info .text {
+			color: #333;
+			word-break: break-all;
+			padding: 10px 0;
+		}
+		
+		.list .info .time {
+			color: #999;
+			font-size: 12px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid #cccccc;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="comment-box">
+		<div class="warp">
+			<i class="avatar"></i>
+			<label for="text"></label>
+			<textarea id="text" maxlength="200" placeholder="发表一条友善的评论"></textarea>
+			<button>发布</button>
+		</div>
+		<div class="warp">
+			<div class="count">0/200字</div>
+		</div>
+	</div>
+	<div class="list"></div>
+</div>
+<script>
+	// 选择输入框
+	const textarea = document.querySelector('.comment-box .warp textarea');
+	// 选择 count 计算字符数量
+	const count = document.querySelector('.comment-box .warp .count');
+	// 选择按钮
+	const button = document.querySelector('.comment-box .warp button');
+	
+	// 事件源 输入框
+	// 事件类型 获取焦点
+	textarea.addEventListener('focus', function () {
+		console.log('1');
+		// 显示输入字数
+		count.style.opacity = '1';
+		textarea.style.height = '60px';
+		button.style.height = '71px';
+	});
+	
+	
+	// 事件类型 失去焦点
+	textarea.addEventListener('blur', function () {
+		// 隐藏输入字数
+		count.style.opacity = '0';
+		// 如果有内容则不能缩小文本框，并显示字数盒子
+		if (textarea.value.length > 0) {
+			textarea.style.height = '60px';
+			count.style.opacity = '1';
+			button.style.height = '71px';
+			button.style.backgroundColor = 'rgb(63, 173, 235)';
+			// 没有内容则隐藏字数盒子
+		}
+		if (textarea.value.length === 0) {
+			textarea.style.height = '30px';
+			button.style.height = '41px';
+			count.style.opacity = '0';
+			button.style.backgroundColor = 'rgb(159, 214, 245)';
+		}
+		
+	});
+	
+	// 事件类型 文本框输入
+	textarea.addEventListener('input', function () {
+		count.innerText = `${textarea.value.length}/200字`;
+		count.style.color = '#cccccc';
+		// 当输入有内容时，按钮变亮
+		if (textarea.value.length > 0) {
+			button.style.backgroundColor = 'rgb(63, 173, 235)';
+		}
+		// 当输入没有内容时，按钮变灰
+		if (textarea.value.length === 0) {
+			button.style.backgroundColor = 'rgb(159, 214, 245)';
+		}
+	});
+	
+	// // 事件类型 键盘回车
+	// // 提交的内容填充
+	
+	let i = 0;
+	textarea.addEventListener('keyup', function (evt) {
+		if (evt.key === 'Enter') {
+			if (textarea.value.trim() !== '') {
+				addItem();
+				const item = document.querySelectorAll('.item');
+				console.log(item);
+				// 选择评论
+				const text = document.querySelectorAll('.info .text');
+				const name = document.querySelectorAll('.info .name');
+				const time = document.querySelectorAll('.info .time');
+				item[i].style.display = 'flex';
+				text[i].innerText = textarea.value;
+				name[i].innerHTML = '痴情人笑';
+				time[i].innerHTML = '2023-4-12 01:10:08';
+				i++;
+			}
+			textarea.value = '';
+			count.innerText = `0/200字`;
+		}
+	});
+	
+	// 新建dom item
+	
+	function addItem() {
+		const list = document.querySelector('.list');
+		const itemDiv = document.createElement('div');
+		const avatar = document.createElement('i');
+		const infoDiv = document.createElement('div');
+		const nameDiv = document.createElement('div');
+		const textBox = document.createElement('div');
+		const timeDiv = document.createElement('div');
+		itemDiv.style.display = 'none';
+		itemDiv.classList.add('item');
+		avatar.classList.add('avatar');
+		infoDiv.classList.add('info');
+		nameDiv.classList.add('name');
+		textBox.classList.add('text');
+		timeDiv.classList.add('time');
+		infoDiv.appendChild(nameDiv);
+		infoDiv.appendChild(textBox);
+		infoDiv.appendChild(timeDiv);
+		itemDiv.appendChild(avatar);
+		itemDiv.appendChild(infoDiv);
+		list.appendChild(itemDiv);
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-family: 微软雅黑, serif;
+		}
+		
+		li {
+			list-style: none;
+		}
+		
+		a {
+			color: black;
+			text-decoration: none;
+		}
+		
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		
+		.comment-box {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width: 600px;
+			height: 50vh;
+		}
+		
+		.warp {
+			display: flex;
+			justify-content: flex-end;
+		}
+		
+		.warp textarea {
+			overflow-y: auto;
+			width: 500px;
+			height: 30px;
+			padding: 5px 10px;
+			font-size: 16px;
+			line-height: 30px;
+			outline: none;
+			resize: none;
+			border: 1px solid transparent;
+			border-radius: 7px;
+			background-color: rgb(241, 242, 243);
+			transition: height .3s;
+		}
+		
+		.warp textarea::placeholder {
+			font-size: 12px;
+			color: #b2aeae;
+		}
+		
+		.warp textarea:focus {
+			border: 1px solid #cccccc;
+		}
+		
+		.warp textarea:focus + button {
+			height: 71px;
+		}
+		
+		
+		.warp button {
+			width: 80px;
+			height: 41px;
+			margin-left: 10px;
+			color: white;
+			font-size: 16px;
+			border-radius: 7px;
+			cursor: pointer;
+			background-color: rgb(159, 214, 245);
+			transition: .3s;
+		}
+		
+		.warp button:hover {
+			background-color: rgb(63, 173, 235);
+		}
+		
+		.count {
+			opacity: 0;
+			color: #cccccc;
+			margin-top: 10px;
+			margin-right: 90px;
+			transition: .3s;
+		}
+	</style>
+</head>
+<body>
+<div class="comment-box">
+	<div class="warp">
+		<label for="text"></label> <textarea id="text" maxlength="200" placeholder="发表一条友善的评论"></textarea>
+		<button>发布</button>
+	</div>
+	<div class="warp">
+		<div class="count">0/200字</div>
+	</div>
+</div>
+<script>
+	// 选择输入框
+	const textarea = document.querySelector('.comment-box .warp textarea');
+	// 选择 count 计算字符数量
+	const count = document.querySelector('.comment-box .warp .count');
+	// 选择按钮
+	const button = document.querySelector('.comment-box .warp button');
+	
+	// 事件源 输入框
+	// 事件类型 获取焦点
+	textarea.addEventListener('focus', function () {
+		console.log('1');
+		// 显示输入字数
+		count.style.opacity = '1';
+		textarea.style.height = '60px';
+		
+	});
+	
+	
+	// 事件类型 失去焦点
+	textarea.addEventListener('blur', function () {
+		// 隐藏输入字数
+		count.style.opacity = '0';
+		// 如果有内容则不能缩小文本框，并显示字数盒子
+		if (textarea.value.length > 0) {
+			textarea.style.height = '60px';
+			count.style.opacity = '1';
+			button.style.backgroundColor = 'rgb(63, 173, 235)';
+			// 没有内容则隐藏字数盒子
+		}
+		if (textarea.value.length === 0) {
+			textarea.style.height = '30px';
+			count.style.opacity = '0';
+			button.style.backgroundColor = 'rgb(159, 214, 245)';
+		}
+		
+	});
+	
+	// 事件类型 文本框输入
+	textarea.addEventListener('input', function () {
+		count.innerText = `${textarea.value.length}/200字`;
+		count.style.color = '#cccccc';
+		// 当输入有内容时，按钮变亮
+		if (textarea.value.length > 0) {
+			button.style.backgroundColor = 'rgb(63, 173, 235)';
+		}
+		// 当输入没有内容时，按钮变灰
+		if (textarea.value.length === 0) {
+			button.style.backgroundColor = 'rgb(159, 214, 245)';
+		}
+	});
+</script>
+</body>
+</html>

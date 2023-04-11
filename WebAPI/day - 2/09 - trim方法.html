@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<label for="text"></label>
+<textarea id="text" name="" cols="30" rows="10"></textarea>
+<script>
+	const str = '     pink      ';
+	// console.log(str);
+	// 去除左右的空格
+	// console.log(str.trim());
+	const tx = document.querySelector('textarea');
+	
+	tx.addEventListener('keyup', function (evt) {
+		if (evt.key === 'Enter') {
+			// 去除左右的空格
+			console.log(tx.value.trim());
+			if (tx.value.trim() !== '') {
+				console.log(tx.value);
+			}
+			tx.value = ''
+		}
+	})
+</script>
+</body>
+</html>

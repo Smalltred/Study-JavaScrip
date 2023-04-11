@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<button>按钮</button>
+<script>
+	const btn = document.querySelector('button');
+	
+	btn.addEventListener('click', function () {
+		// 这里的js回收机制
+		// 点击一次输出 random值,输出完之后，值不会被保存，就没用了，就扔掉，直到点击下一次，在函数内部可以
+		const random = Math.random();
+		console.log(random);
+	})
+</script>
+</body>
+</html>

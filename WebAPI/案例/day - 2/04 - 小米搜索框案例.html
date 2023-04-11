@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		li {
+			list-style: none;
+		}
+		
+		a {
+			color: black;
+			text-decoration: none;
+		}
+		
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		
+		.search-box {
+			width: 500px;
+			height: 500px;
+		}
+		
+		.search-box input {
+			width: 225px;
+			height: 25px;
+			padding: 10px;
+			font-size: 18px;
+			outline: none;
+			border: 1px solid #cccccc;
+		}
+		
+		.search-box input::placeholder {
+			color: #999999;
+		}
+		
+		.search-box input:focus {
+			border: 1px solid rgb(247, 108, 20);
+		}
+		
+		
+		.result-list {
+			display: none;
+			width: 246px;
+			border-right: 1px solid rgb(247, 108, 20);
+			border-bottom: 1px solid rgb(247, 108, 20);
+			border-left: 1px solid rgb(247, 108, 20);
+			box-sizing: border-box;
+		}
+		
+		.result-list ul {
+			display: flex;
+			flex-direction: column;
+		}
+		
+		.result-list li {
+			height: 26px;
+			line-height: 26px;
+		}
+		
+		.result-list li a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			padding-left: 10px;
+			color: #999999;
+			font-size: 14px;
+		}
+		
+		.result-list li:hover {
+			background-color: rgb(250, 250, 250);
+		}
+		
+		.show-list {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+<div class="search-box">
+	<label><input type="text" placeholder="手机"></label>
+	<div class="result-list">
+		<ul>
+			<li><a href="">全部商品</a></li>
+			<li><a href="">手机</a></li>
+			<li><a href="">电视</a></li>
+			<li><a href="">耳机</a></li>
+			<li><a href="">空调</a></li>
+			<li><a href="">充电宝</a></li>
+		</ul>
+	</div>
+</div>
+<script>
+	// 选择input
+	const input = document.querySelector('.search-box input');
+	
+	// 选择结果列表
+	const resultList = document.querySelector('.search-box .result-list');
+	
+	// 事件源 输入框
+	// 事件类型 获取焦点
+	input.addEventListener('focus', function () {
+		// 事件程序
+		resultList.classList.add('show-list');
+	});
+	
+	// 事件源 输入框
+	// 事件类型 失去焦点
+	input.addEventListener('blur', function () {
+		resultList.classList.remove('show-list');
+	});
+</script>
+</body>
+</html>

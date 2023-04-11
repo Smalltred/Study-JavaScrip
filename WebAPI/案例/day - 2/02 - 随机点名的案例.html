@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		
+		.warp {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			width: 50vw;
+			height: 50vh;
+			background-color: pink;
+		}
+		
+		.warp h1 {
+			margin-top: -20px;
+		}
+		
+		.warp .name {
+			font-weight: 600;
+			font-size: 32px;
+		}
+		
+		.warp .name span {
+			display: inline-block;
+			text-align: center;
+			width: 100px;
+			color: red;
+		}
+		
+		.button {
+			display: flex;
+			justify-content: space-evenly;
+			width: 50vw;
+		}
+		
+		
+		button {
+			width: 100px;
+			height: 40px;
+			border: 1px solid #cccccc;
+			cursor: pointer;
+		}
+		
+		.disabled {
+			cursor: not-allowed;
+		}
+	</style>
+</head>
+<body>
+<div class="warp">
+	<h1>随机问答</h1>
+	<div class="name">名字是: <span></span></div>
+	<div class="button">
+		<button class="start">开始</button>
+		<button class="rest disabled" disabled>重置</button>
+		<button class="end disabled" disabled>结束</button>
+	</div>
+</div>
+<script>
+	// 需求 随机点名
+	// 点击开始 数组里随机填充到span标签
+	// 事件源 开始
+	// 事件类型 点击
+	// 事件程序 随机名字填充到span
+	const singerNames = ["周杰伦", "林俊杰", "王力宏", "张学友", "陈奕迅", "邓紫棋", "蔡依林", "张靓颖", "李宇春", "汪峰"];
+	
+	// 选择开始
+	const start = document.querySelector('.start');
+	// 选择结束
+	const end = document.querySelector('.end');
+	// 选择重置
+	const rest = document.querySelector('.rest');
+	// 选择要填充的标签
+	const span = document.querySelector('.name span');
+	
+	
+	let timer = 0;
+	let random = 0;
+	// 添加事件
+	start.addEventListener('click', function () {
+		// start.disabled = true;
+		// rest.disabled = true;
+		// 点击后关闭开始和重置按钮
+		start.disabled = rest.disabled = true;
+		// 点击开始后 结束就可以点击了
+		end.disabled = false;
+		end.classList.remove('disabled');
+		// 添加样式
+		start.classList.add('disabled');
+		rest.classList.add('disabled');
+		// 事件程序
+		timer = setInterval(function () {
+			random = Math.floor(Math.random() * singerNames.length);
+			span.innerText = singerNames[random];
+		}, 35);
+		// 还剩一个了，那么就没必要抽了， 禁用两个按钮
+		if (singerNames.length === 1) {
+			// start.disabled = true;
+			// end.disabled = true;
+			// 关闭开始和结束按钮
+			start.disabled = end.disabled = true;
+			// 添加相关样式
+			start.classList.add('disabled');
+			end.classList.add('disabled');
+			// 开启重置按钮
+			rest.disabled = false;
+			rest.classList.remove('disabled');
+		}
+	});
+	
+	// 暂停
+	end.addEventListener('click', function () {
+		// start.disabled = false;
+		// rest.disabled = false;
+		// 暂停后
+		// 开启开始按钮和重置按钮
+		start.disabled = rest.disabled = false;
+		// 移除开启按钮样式
+		start.classList.remove('disabled');
+		// 移除重置按钮样式
+		rest.classList.remove('disabled');
+		clearInterval(timer);
+		singerNames.splice(random, 1);
+	});
+	
+	// 重置功能
+	rest.addEventListener('click', function () {
+		// 清楚计时器
+		clearInterval(timer);
+		
+		// 重置 开启按钮可以点击
+		start.disabled = false;
+		start.classList.remove('disabled');
+		// 结束按钮不能点击
+		end.disabled = true;
+		end.classList.add('disabled');
+		// 删除最后一元素
+		singerNames.pop();
+		// 重新添加数组元素
+		const temp = ["周杰伦", "林俊杰", "王力宏", "张学友", "陈奕迅", "邓紫棋", "蔡依林", "张靓颖", "李宇春", "汪峰"];
+		for (let i = 0; i < temp.length; i++) {
+			singerNames.push(temp[i]);
+		}
+		console.log(singerNames);
+	});
+</script>
+</body>
+</html>

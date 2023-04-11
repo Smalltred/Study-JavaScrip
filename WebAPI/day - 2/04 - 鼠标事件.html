@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+<div></div>
+<script>
+	// 事件源 div
+	const div = document.querySelector('div');
+	
+	// 事件类型 鼠标经过
+	div.addEventListener('mouseenter', function () {
+		// alert('鼠标进入了')
+		console.log('轻轻的我来了');
+	});
+	// 事件类型 鼠标移出
+	div.addEventListener('mouseleave', function () {
+		// alert('鼠标进入了')
+		console.log('轻轻的我走了');
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<button>点我</button>
+<script>
+	
+	// 特殊变量 this
+	// 每个函数里面都有this 环境对象 普通函数里面的this指向window
+	// 谁调用就 指向谁
+	// function func() {
+	// 	console.log(this);
+	// }
+	//
+	// window.func()
+	
+	const button = document.querySelector('button');
+	
+	button.addEventListener('click', function () {
+		// console.log(this);
+		// button.style.color = 'red';
+		this.style.color = 'red';
+	})
+</script>
+</body>
+</html>

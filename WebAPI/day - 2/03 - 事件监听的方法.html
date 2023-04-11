@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<button>点我</button>
+<script>
+	const btn = document.querySelector('button');
+	// 老版本 后面会覆盖前面的事件
+	// btn.onclick = function () {
+	// 	console.log('L0 11我被点击了');
+	// };
+	//
+	// btn.onclick = function () {
+	// 	console.log('L0 22我被点击了');
+	// };
+	
+	// addEventListener 方式可以绑定多次 具有多特性
+	btn.addEventListener('click', function () {
+		console.log('L1 11我被点击了');
+	});
+	btn.addEventListener('click', function () {
+		console.log('L1 22我被点击了');
+	});
+</script>
+</body>
+</html>

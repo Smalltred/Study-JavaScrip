@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<label> <input type="text"> </label>
+<script>
+	
+	// 获取输入表单
+	const input = document.querySelector('input');
+	
+	// 事件类型 获取焦点
+	input.addEventListener('focus', function () {
+		console.log('获得焦点');
+	})
+	// 事件类型 失去焦点
+	input.addEventListener('blur', function () {
+		console.log('失去焦点');
+	})
+</script>
+</body>
+</html>
