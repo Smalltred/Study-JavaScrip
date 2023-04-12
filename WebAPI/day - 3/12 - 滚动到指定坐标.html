@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		body {
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+<button>点我去最下层</button>
+<script>
+	// 选择按钮
+	const button = document.querySelector('button');
+	
+	button.addEventListener('click', function () {
+		//  window.scrollTo(x, y)
+		// 横向和纵向
+		window.scrollTo(0, 3000)
+	});
+</script>
+</body>
+</html>

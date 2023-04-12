@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.father {
+			width: 300px;
+			height: 300px;
+			background-color: pink;
+		}
+		
+		.son {
+			width: 150px;
+			height: 150px;
+			background-color: #1aa5fb;
+		}
+	</style>
+</head>
+<body>
+<div class="father">
+	<div class="son"></div>
+</div>
+<script>
+	// 事件捕获
+	// dom => html => body => 事件源
+	// 事件冒泡
+	// 事件源 => body => html => dom
+	
+	const fa = document.querySelector('.father');
+	const son = document.querySelector('.son');
+	
+	// 事件类型 事件函数 true事件捕获阶段触发 默认false
+	
+	// document.addEventListener('click', function () {
+	// 	alert('我是dom,点我干嘛');
+	// }, true);
+	//
+	// fa.addEventListener('click', function () {
+	// 	alert('我是爸爸');
+	// }, true);
+	// son.addEventListener('click', function () {
+	// 	alert('我是儿子');
+	// }, true);
+	
+	
+	document.addEventListener('click', function () {
+		alert('我是dom,点我干嘛');
+	});
+	
+	fa.addEventListener('click', function () {
+		alert('我是爸爸');
+	});
+	son.addEventListener('click', function () {
+		alert('我是儿子');
+	});
+</script>
+</body>
+</html>

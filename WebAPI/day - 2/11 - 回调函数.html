@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 回调函数A
+	function A() {
+		console.log('我是A函数');
+	}
+	
+	// 接收函数A的函数
+	function B(A) {
+		A();
+	}
+	
+	// 函数A作为参数传为B 那么A就是B的回调函数
+	B(A);
+</script>
+</body>
+</html>

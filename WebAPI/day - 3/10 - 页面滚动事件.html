@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		body {
+			height: 3000px;
+		}
+		
+		div {
+			display: none;
+			overflow-y: auto;
+			width: 200px;
+			height: 200px;
+			margin: 200px;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+<div>我里面有很多很多的文字 我里面有很多很多的文字 我里面有很多很我里面有 很多很多的文字我里面有 很多很多的文字我里面有很 多很多的文字我里面有很多 很多的文字我里面有很多很多的文字我里面有很多很多的文字多的文字我里面有很多很多的文字我里面有很多很多的文字我里面有很多很多的文字我里面有很多很多的文字我里面有很多很多的文字我里面有很多很多的文字我里面有很多很多的文字我里面有很多很多的文字我里面有很多很多的文字我里面有很多很多的文字
+</div>
+<script>
+	const div = document.querySelector('div');
+	// scroll 页面滚动事件
+	window.addEventListener('scroll', function () {
+		// console.log('我滚了');
+		// 我想知道页面的滚动了多少像素，被卷去了多少。scrollTop
+		// 获取html元素的写法
+		// document.documentElement;
+		// console.log(document.documentElement.scrollTop);
+		//
+		const n = document.documentElement.scrollTop;
+		console.log(n);
+		if (n >= 90) {
+			div.style.display = 'block';
+		} else {
+			div.style.display = 'none';
+		}
+	});
+	
+	// const div = document.querySelector('div');
+	// div.addEventListener('scroll', function () {
+	// 	console.log('111');
+	// 	// 被卷去的头部，也就是超出的盒子的部分
+	// 	console.log(div.scrollTop);
+	// })
+</script>
+</body>
+</html>

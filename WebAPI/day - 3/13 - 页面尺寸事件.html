@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		div {
+			display: inline-block;
+			width: 200px;
+			height: 200px;
+			padding: 10px;
+			border: 20px solid black;
+			background-color: #1aa5fb;
+		}
+	</style>
+</head>
+<body>
+<div>12312312312312312312312</div>
+<script>
+	
+	// div.clientWidth 获取盒子宽度 不包含边框、外边距、滚动条
+	// div.clientHeight 获取盒子高度 不包含边框、外边距、滚动条
+	const div = document.querySelector('div');
+	console.log(div.clientWidth);
+	console.log(div.clientHeight);
+	
+	// resize 浏览器窗口 窗口放生变化的时候，触发的事件
+	window.addEventListener('resize', function () {
+		console.log('我的尺寸变了');
+	});
+</script>
+</body>
+</html>

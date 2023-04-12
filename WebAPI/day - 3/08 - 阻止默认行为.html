@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<form action="https://www.hecady.com">
+	<label for="submit">
+		<input type="submit" id="submit" value="提交">
+	</label>
+</form>
+<a href="https://www.hecady.com">我的博客</a>
+<script>
+	// 获取表单域
+	const form = document.querySelector('form');
+	form.addEventListener('submit', function (evt) {
+		// 阻止元素默认行为 提交
+		evt.preventDefault();
+		console.log('阻止了表单的提交');
+	});
+	
+	// 获取a
+	const a = document.querySelector('a');
+	a.addEventListener('click', function (evt) {
+		evt.preventDefault();
+		// 阻止元素默认行为 点击跳转
+		console.log('阻止了a标签的跳转');
+	});
+</script>
+</body>
+</html>

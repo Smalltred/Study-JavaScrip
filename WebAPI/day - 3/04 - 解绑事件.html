@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<button>按钮</button>
+<script>
+	const button = document.querySelector('button');
+	
+	// button.onclick = function () {
+	// 	alert('我弹出了');
+	// 	// L0 事件解绑
+	// 	button.onclick = null;
+	// };
+	// button.onclick = null;
+	
+	function fn() {
+		alert('我弹出了');
+		
+		// 移除L2 冒泡事件
+		button.removeEventListener('click', fn);
+	}
+	
+	button.addEventListener('click', fn);
+	
+	// 匿名函数无法解绑
+</script>
+</body>
+</html>

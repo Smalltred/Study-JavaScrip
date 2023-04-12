@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+		
+		li {
+			list-style: none;
+		}
+		
+		.nav ul {
+			display: flex;
+			justify-content: space-between;
+		}
+		
+		.nav li {
+			display: block;
+			width: 100px;
+			height: 40px;
+			margin-right: 10px;
+			text-align: center;
+			line-height: 40px;
+			cursor: pointer;
+			background-color: pink;
+		}
+		
+		.nav li {
+			-moz-user-select: none; /*火狐*/
+			-webkit-user-select: none; /*webkit浏览器*/
+			-ms-user-select: none; /*IE10*/
+			user-select: none;
+		}
+	</style>
+</head>
+<body>
+<div class="nav">
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<p>我不需要变色</p>
+	</ul>
+</div>
+<script>
+	const ul = document.querySelector('ul');
+	
+	// 事件委托
+	// 事件对象
+	ul.addEventListener('click', function (evt) {
+		// console.log('ul被点击了');
+		// console.log(evt);
+		// 父元素的子元素， 当前点击元素的对象
+		// console.dir(evt.target);
+		// evt.target.style.color = 'red';
+		if (evt.target.tagName === 'LI') {
+			evt.target.style.color = 'red';
+		}
+	});
+</script>
+</body>
+</html>

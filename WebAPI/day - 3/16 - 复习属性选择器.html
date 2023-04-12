@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		/*input[value] {*/
+		/*	color: #1aa5fb;*/
+		/*}*/
+		
+		input[type=text] {
+			color: #1aa5fb;
+		}
+	</style>
+</head>
+<body>
+<label>
+	<input type="text" data-id="0" data-name="hello">
+</label>
+<label>
+	<input type="password">
+</label>
+<script>
+	const input = document.querySelector('input[data-id="0"]');
+	console.log(input.dataset);
+	console.log(input.dataset.id);
+</script>
+</body>
+</html>

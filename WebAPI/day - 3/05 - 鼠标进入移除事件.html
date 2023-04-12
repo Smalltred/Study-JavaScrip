@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		.dad {
+			width: 300px;
+			height: 300px;
+			background-color: pink;
+		}
+		
+		.baby {
+			width: 150px;
+			height: 150px;
+			background-color: lightpink;
+		}
+	</style>
+</head>
+<body>
+<div class="dad">
+	<div class="baby"></div>
+</div>
+<script>
+	const dad = document.querySelector('.dad');
+	
+	dad.addEventListener('mouseenter', function () {
+		console.log('鼠标经过');
+	});
+	
+	dad.addEventListener('mouseleave', function () {
+		console.log('鼠标离开');
+	});
+</script>
+</body>
+</html>
