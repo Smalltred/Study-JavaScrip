@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<div class="time">YYYY-MM-DD-HH:mm</div>
+<script>
+	
+	function getDate() {
+		// 实例化时间对象
+		const date = new Date();
+		
+		// 时间补0
+		const years = date.getFullYear();
+		const month = date.getMonth() + 1;
+		const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
+		const hours = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
+		const minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
+		return `${years}-${month}-${day} ${hours}:${minutes}`;
+	}
+	
+	// 选择dom
+	const div = document.querySelector('.time');
+	
+	div.innerHTML = getDate();
+
+</script>
+</body>
+</html>

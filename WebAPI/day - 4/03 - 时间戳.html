@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<div class="time"></div>
+<script>
+	// 实例化
+	const date = new Date();
+	
+	// 获取时间戳
+	// 1
+	console.log(date.getTime());
+	// 2
+	console.log(+new Date());
+	// 3
+	console.log(Date.now());
+	
+	const div = document.querySelector('.time');
+	
+	setInterval(function () {
+		div.innerHTML = `${Date.now()}`;
+	}, 100);
+	
+	// 2 获取指定时间的时间戳 +new Date()
+	
+	console.log(+new Date('2017-1-1'));
+	
+	// 2 过去的事件和现在
+	console.log(+new Date() - +new Date('2017-1-1'));
+	
+	// 2 计算时间
+	const date2017 = +new Date('2017-1-1');
+	const nowDate = new Date();
+	const pastDate = nowDate - date2017;
+	// 时间戳换算时间
+	console.log(pastDate / 1000);
+	console.log(pastDate / 1000 / 60);
+	console.log(pastDate / 1000 / 60 / 60);
+	console.log(pastDate / 1000 / 60 / 60 / 24);
+</script>
+</body>
+</html>

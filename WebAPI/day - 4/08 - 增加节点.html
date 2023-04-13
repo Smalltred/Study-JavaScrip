@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<ul>
+	<li>我是老大</li>
+</ul>
+<script>
+	// const div = document.createElement('div');
+	// console.log(div);
+	// 追加节点，插入到某一个父元素中 插入到父元素的最后一个子元素中
+	// document.body.appendChild(div);
+	
+	const ul = document.querySelector('ul');
+	const li = document.createElement('li');
+	li.innerHTML = '我第一个li';
+	// ul.appendChild(li);
+	// 在前面插入 insertBefore(追加的元素, 在哪个元素之前)
+	ul.insertBefore(li, ul.children[0]);
+</script>
+</body>
+</html>

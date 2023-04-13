@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<div class="time">YYYY-MM-DD-HH:mm</div>
+<script>
+	
+	function getDate() {
+		// 实例化时间对象
+		const date = new Date();
+		// return date.toLocaleTimeString();  // 17:03:37
+		// return date.toLocaleDateString();  // 2023/4/13
+		return date.toLocaleString();  // 2023/4/13 17:05:14
+	}
+	
+	
+	// 选择dom
+	const div = document.querySelector('.time');
+	
+	setInterval(function () {
+		div.innerHTML = getDate();
+	}, 1000);
+</script>
+</body>
+</html>

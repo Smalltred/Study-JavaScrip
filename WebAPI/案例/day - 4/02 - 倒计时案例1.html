@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<style>
+		.countdown {
+			width: 240px;
+			height: 305px;
+			text-align: center;
+			line-height: 1;
+			color: #fff;
+			background-color: brown;
+			/* background-size: 240px; */
+			/* float: left; */
+			overflow: hidden;
+		}
+		
+		.countdown .next {
+			font-size: 16px;
+			margin: 25px 0 14px;
+		}
+		
+		.countdown .title {
+			font-size: 33px;
+		}
+		
+		.countdown .tips {
+			margin-top: 80px;
+			font-size: 23px;
+		}
+		
+		.countdown small {
+			font-size: 17px;
+		}
+		
+		.countdown .clock {
+			width: 142px;
+			margin: 18px auto 0;
+			overflow: hidden;
+		}
+		
+		.countdown .clock span,
+		.countdown .clock i {
+			display: block;
+			text-align: center;
+			line-height: 34px;
+			font-size: 23px;
+			float: left;
+		}
+		
+		.countdown .clock span {
+			width: 34px;
+			height: 34px;
+			border-radius: 2px;
+			background-color: #303430;
+		}
+		
+		.countdown .clock i {
+			width: 20px;
+			font-style: normal;
+		}
+	</style>
+</head>
+<body>
+<p></p>
+<div class="countdown">
+	<p class="next">今天是2222年2月22日</p>
+	<p class="title">下班倒计时</p>
+	<p class="clock">
+		<span id="hour"></span>
+		<i>:</i>
+		<span id="minutes"></span>
+		<i>:</i>
+		<span id="scond"></span>
+	</p>
+	<p class="tips">18:30:00下课</p>
+</div>
+<script>
+	
+	getRandomColor();
+	getTime();
+	
+	function getRandomColor(boolean) {
+		const hexArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
+		if (boolean) {
+			let color = '#';
+			for (let i = 0; i < 6; i++) {
+				let randomHexColor = Math.floor(Math.random() * hexArray.length);
+				color = color + hexArray[randomHexColor];
+			}
+			document.querySelector('.countdown').style.backgroundColor = color;
+			document.querySelector('p').innerHTML = `当前颜色: ${color}`;
+		} else {
+			let color = '';
+			for (let i = 0; i < 3; i++) {
+				let r = Math.floor(Math.random() * (256));
+				let g = Math.floor(Math.random() * (256));
+				let b = Math.floor(Math.random() * (256));
+				color = `rgb(${r},${g},${b})`;
+			}
+			document.querySelector('.countdown').style.backgroundColor = color;
+			document.querySelector('p').innerHTML = `当前颜色: ${color}`;
+		}
+	}
+	
+	
+	function getTime() {
+		// 获取当前时间 实例化
+		const date = new Date();
+		const years = date.getFullYear();
+		const month = date.getMonth() + 1;
+		const days = date.getDate();
+		
+		
+		// 最终时间18:30:00 - 当前时间
+		const lastTime = +new Date(`${years}-${month}-${days} 18:30:00`);
+		const nowTime = +new Date();
+		
+		// 结果
+		const resultTimeS = (lastTime - nowTime) / 1000;
+		let s = Math.floor(resultTimeS % 60);
+		let m = Math.floor(resultTimeS / 60 % 60);
+		let h = Math.floor(resultTimeS / 60 / 60 % 24);
+		// const d = resultTimeS / 60 / 60 / 24;
+		
+		
+		h = h < 10 ? `0${h}` : h;
+		m = m < 10 ? `0${m}` : m;
+		s = s < 10 ? `0${s}` : s;
+		
+		document.querySelector('.countdown #hour').innerHTML = `${h}`;
+		document.querySelector('.countdown #minutes').innerHTML = `${m}`;
+		document.querySelector('.countdown #scond').innerHTML = `${s}`;
+		document.querySelector('.countdown .next').innerHTML = `今天是${years}年${month}日${days}`;
+	}
+	
+	
+	setInterval(getRandomColor, 1000);
+	setInterval(getTime, 1000);
+
+</script>
+</body>
+</html>

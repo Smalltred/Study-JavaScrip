@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+<script>
+	
+	const ul = document.querySelector('ul');
+	// 克隆节点
+	
+	// const li1 = ul.children[0].cloneNode(true);
+	// console.log(li1);
+	// 深克隆 克隆元素和元素对象 该节点的所有后代节点也都会被克隆
+	ul.appendChild(ul.children[0].cloneNode(true));
+	// 浅克隆 只克隆元素
+	ul.appendChild(ul.children[0].cloneNode());
+</script>
+</body>
+</html>
