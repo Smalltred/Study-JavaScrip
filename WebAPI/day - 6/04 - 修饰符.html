@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// console.log(/^java$/.test('java')); // true
+	// console.log(/^java$/.test('JAVA')); // false
+	// // 修饰符 /元字符/修饰符 i 不区分大小写
+	// console.log(/^java$/i.test('JAVA')); // true
+	
+	// 查找替换 replace
+	const str = 'java是一门编程语言，学完java工资很高';
+	// g 匹配全局结果 替换全局结果不区分大小写 并替换
+	const newStr = str.replace(/java/gi, '前端');
+	// 正则或 |
+	// const newStr = str.replace(/java|JAVA/g, '前端');
+	console.log(newStr);
+</script>
+</body>
+</html>

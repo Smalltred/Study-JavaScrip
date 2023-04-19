@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 要求用户英文字母，数字，下划线，或者短横线 长度为 6 - 16
+	const reg = /^[a-zA-Z0-9_-]{6,16}$/;
+	const str = '123456_-';
+	console.log(reg.test(str));
+</script>
+</body>
+</html>

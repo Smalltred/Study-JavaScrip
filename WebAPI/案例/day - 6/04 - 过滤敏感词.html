@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<textarea id="" name="" cols="30" rows="10" style="resize: none"></textarea>
+<button>发布</button>
+<div>123</div>
+<script>
+	const tx = document.querySelector('textarea');
+	const btn = document.querySelector('button');
+	const div = document.querySelector('div');
+	
+	btn.addEventListener('click', function () {
+		// tx.value.replace(/基情|激情/, '**')
+		div.innerText = tx.value.replace(/基情|激情/g, '**');
+		tx.value = '';
+	});
+</script>
+</body>
+</html>

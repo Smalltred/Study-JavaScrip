@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 字符类
+	// 只选一个 abc任意一个
+	// console.log(/^[abc]$/.test('a')); // true
+	// console.log(/^[abc]$/.test('b')); // true
+	// console.log(/^[abc]$/.test('c')); // true
+	
+	// console.log(/^[abc]{2}$/.test('ac')); // true
+	// console.log(/^[abc]{2}$/.test('ab')); // true 必须以abc结尾什 且开头包含abc和末尾包含abc
+	
+	
+	// console.log(/^[a-z]*$/.test('')); // true 匹配如果是没有依然返回true多次全部小写字符
+	// console.log(/^[a-z]{10}$/.test('aasdsadasd')); // true 匹配10次全部小写字符
+	// console.log(/^[a-z]+$/.test('aasdsadasd')); // true 匹配多次次全部小写字符
+	
+	// console.log(/^[A-Z]*$/.test('')); // false 匹配如果是没有依然返回true多次全部大写写字符
+	// console.log(/^[A-Z]+$/.test('AAAAAAA')); // true 匹配所有以大写字符开头 以大写字符结尾
+	// console.log(/^[0-9]+$/.test('1264865489')); // true  匹配所有以数字开头 以数字结尾
+	
+	// console.log(/^[a-zA-Z0-9]+$/.test('q2w213sadasd'));
+	
+	// qq号
+	// console.log(/^[1-9][0-9]{4,}/.test('06543124'));
+
+</script>
+</body>
+</html>
