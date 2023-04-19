@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const arr = ['red', 'black', 'green'];
+	// map方法 字符串拼接
+	const newArr = arr.map(function (value, index) {
+		console.log('元素', value);
+		console.log('索引', index);
+		return value + '颜色';
+	});
+	console.log(newArr);
+	// 数组 join 把元素中所有的元素转为一个字符串 对每个元素字符串用分隔符分开
+	console.log(newArr.join()) // 为空默认逗号分割
+	console.log(newArr.join('.'));
+	console.log(newArr.join('|'));
+	
+</script>
+</body>
+</html>

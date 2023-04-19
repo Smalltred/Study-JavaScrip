@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 永久存储在浏览器中
+	// 本地储存添加数据
+	localStorage.setItem('name', 'hecady');
+	// 查看数据
+	console.log(localStorage.getItem('name'));
+	//删除数据
+	// localStorage.removeItem('name');
+	// 更改数据 有则增 无则更改
+	// localStorage.setItem('name', 'cady');
+	// 本地存储只能存储字符串
+	localStorage.setItem('age', 17);
+	console.log(localStorage.getItem('age'));
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>学生信息管理</title>
+	<link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+<h1>新增学员</h1>
+<form class="info" autocomplete="off">
+	姓名：
+	<input type="text" class="uname" name="uname" />
+	年龄：
+	<input type="text" class="age" name="age" />
+	性别: <select name="gender" class="gender">
+	<option value="男">男</option>
+	<option value="女">女</option>
+</select> 薪资：
+	<input type="text" class="salary" name="salary" />
+	就业城市：<select name="city" class="city">
+	<option value="北京">北京</option>
+	<option value="上海">上海</option>
+	<option value="广州">广州</option>
+	<option value="深圳">深圳</option>
+	<option value="曹县">曹县</option>
+</select>
+	<button class="add">录入</button>
+</form>
+
+<h1>就业榜 学员数量<span>0</span></h1>
+<table>
+	<thead>
+		<tr>
+			<th>学号</th>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>性别</th>
+			<th>薪资</th>
+			<th>就业城市</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!--
+		  <tr>
+			<td>1001</td>
+			<td>欧阳霸天</td>
+			<td>19</td>
+			<td>男</td>
+			<td>15000</td>
+			<td>上海</td>
+			<td>
+			  <a href="javascript:">删除</a>
+			</td>
+		  </tr>
+		  -->
+	</tbody>
+</table>
+<script>
+	// 参考数据
+	// const initData = [
+	//   {
+	//     stuId: 1001,
+	//     uname: '欧阳霸天',
+	//     age: 19,
+	//     gender: '男',
+	//     salary: '20000',
+	//     city: '上海',
+	//   }
+	// ]
+	
+	// 定义一个数组
+	let initData = JSON.parse(localStorage.getItem('info')) || [];
+	// 1.检查输入内容是否为空
+	// 选择输入框
+	const uname = document.querySelector('.uname');
+	const age = document.querySelector('.age');
+	const salary = document.querySelector('.salary');
+	const city = document.querySelector('.city');
+	const gender = document.querySelector('.gender');
+	// 选择表单
+	const from = document.querySelector('.info');
+	
+	// 事件委托
+	from.addEventListener('submit', function (evt) {
+		// 阻止表单默认提交事件
+		evt.preventDefault();
+		if (!(uname.value && age.value && salary.value)) {
+			alert('不能提交空的内容');
+		} else {
+			
+			// 获取数据 存入数组列表,并渲染页面，最后存入本地数组
+			// 1.获取数据
+			const info = {
+				stuId: initData.length ? initData[initData.length - 1].stuId + 1 : 1,
+				uname: uname.value.trim(),
+				age: age.value.trim(),
+				gender: gender.value,
+				salary: salary.value.trim(),
+				city: city.value,
+			};
+			this.reset();
+			
+			initData.push(info);
+			
+			localStorage.setItem('info', JSON.stringify(initData));
+			
+			render();
+		}
+		
+	});
+	// 选择tbody
+	const tbody = document.querySelector('tbody');
+	// 选择显示学员数量的标题
+	const span = document.querySelector('h1 span');
+	render();
+	
+	// 渲染函数
+	function render() {
+		const trArr = initData.map(function (value, index) {
+			return `<tr><td>${value.stuId}</td><td>${value.uname}</td><td>${value.age}</td><td>${value.gender}</td><td>${value.salary}</td><td>${value.city}</td><td><a data-id="${index}" href="javascript:">删除</a></td></tr>`;
+		});
+		// 转为对象为json字符串
+		tbody.innerHTML = trArr.join("");
+		span.innerHTML = initData.length;
+	}
+	
+	// 删除事件
+	// 事件委托
+	tbody.addEventListener('click', function (evt) {
+		if (evt.target.tagName === 'A') {
+			const id = +evt.target.dataset.id;
+			if (confirm('您确定要删除这条数据吗？')) {
+				initData.splice(id, 1);
+				localStorage.setItem('info', JSON.stringify(initData));
+				render();
+			}
+		}
+	});
+	
+	// const trs = document.querySelectorAll('tbody tr');
+	// for (let i = 0; i < trs.length; i++) {
+	// 	trs[i].addEventListener('click', function (evt) {
+	// 		if (evt.target.tagName === 'A') {
+	// 			this.remove();
+	// 			initData.splice(i, 1);
+	// 			localStorage.setItem('info', JSON.stringify(initData));
+	// 			render();
+	// 		}
+	// 	});
+	// }
+
+</script>
+</body>
+
+</html>

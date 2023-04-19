@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<button>前进</button>
+<button>后退</button>
+<script>
+	const forward = document.querySelector('button');
+	const back = forward.nextElementSibling;
+	
+	forward.addEventListener('click', function () {
+		// 网页前进
+		// history.forward();
+		history.go(1);
+	});
+	
+	back.addEventListener('click', function () {
+		// 网页后退
+		// history.back();
+		history.go(-1);
+	});
+
+</script>
+</body>
+</html>

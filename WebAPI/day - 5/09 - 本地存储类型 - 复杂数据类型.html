@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const obj = {
+		uname: 'hecady',
+		age: 22,
+		gender: '男'
+	};
+	
+	const arr = [1, 2, 3, 4, 5];
+	
+	// 存储对象
+	// localStorage.setItem('obj', obj);
+	// 数组
+	localStorage.setItem('arr', arr);
+	// 取值
+	// console.log(localStorage.getItem('obj'));
+	// 复杂数据 出入本地必须先转为json字符串形式
+	localStorage.setItem('obj', JSON.stringify(obj));
+	// json对象  属性和值都有引号， 且都为双引号
+	// console.log(localStorage.getItem('obj'));
+	// console.log(typeof localStorage.getItem('obj'));
+	// 取出来需要转为对象类型 把JSON字符串转换过对象类型
+	const str = localStorage.getItem('obj');
+	// console.log(JSON.parse(localStorage.getItem('obj')));
+	const objs = JSON.parse(str);
+	console.log(objs);
+
+</script>
+</body>
+</html>

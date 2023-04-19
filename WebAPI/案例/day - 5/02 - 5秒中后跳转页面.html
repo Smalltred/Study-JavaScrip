@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<a href="https://www.hecady.com">支付成功后<span>5</span>秒后跳转到首页</a>
+<script>
+	// 获取元素
+	const a = document.querySelector('a');
+	// 开启定时器
+	let num = 5;
+	let timer = setInterval(function () {
+		num--;
+		// console.log(num);
+		a.innerHTML = `支付成功后<span>${num}</span>秒后跳转到首页`;
+		if (!num) {
+			clearInterval(timer);
+			location.href = "https://www.hecady.com"
+		}
+	}, 1000);
+</script>
+</body>
+</html>
