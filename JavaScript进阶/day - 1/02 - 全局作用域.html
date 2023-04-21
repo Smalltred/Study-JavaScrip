@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 不推荐
+	// window.anem = 10;
+	// 可以
+	let num = 10;
+	for (let i = 0; i < 10; i++) {
+		console.log(num);
+		console.log(i);
+	}
+	
+	let a = 10;
+	let b = 20;
+	
+	function f() {
+		let a = 5;
+		
+		function g() {
+			a = 11;
+			console.log(a);
+		}
+		g()
+	}
+	
+	f()
+</script>
+</body>
+</html>

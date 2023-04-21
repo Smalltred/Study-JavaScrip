@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	
+	func();
+	// 会把函数提升到当前作用域的上面
+	// 只提升函数声明 不提升函数的调用
+	function func() {
+		let a = 20;
+		console.log(a);
+		console.log('函数被提升了');
+	}
+	
+	// fun();
+	// 这是变量赋值 不会提升变量赋值
+	// 函数表达式不存在提升
+	var fun = function () {
+		console.log('我是函数表达式');
+	};
+	
+	fun();
+</script>
+</body>
+</html>

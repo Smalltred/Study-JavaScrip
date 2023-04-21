@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 内层函数和外层函数的变量
+	// 简单写法
+	// function outer() {
+	// 	let a = 10;
+	//
+	// 	function func() {
+	// 		console.log(a);
+	// 	}
+	//
+	// 	return func();
+	// }
+	//
+	// outer();
+	
+	// 常用闭包的形式
+	function func() {
+		let a = 10;
+		
+		function c() {
+			console.log(a);
+		}
+		
+		return c();
+	}
+	
+	const c = func();
+</script>
+</body>
+</html>
