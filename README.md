@@ -3,7 +3,7 @@
 ## 进度说明
 
 ✅ JavaScript 基础内容  
-❌ Web API  
+✅ Web API  
 ❌ Javascript进阶
 
 
