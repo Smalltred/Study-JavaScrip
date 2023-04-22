@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const obj = {
+		name: 'hecady',
+		age: 18
+	};
+	const name = 'cady';
+	// 解构
+	// const {name, age} = {name: 'hecady', age: 18};
+	// 要求属性名和变量名一致
+	// name = obj.name
+	// age = obj.age
+	// console.log(name);
+	// console.log(age);
+	// 对象解构 变量名可以重新改变量名 旧变量名: 新变量名
+	const {name: username, age} = {name: 'cady', age: 18};
+	console.log(username);
+	console.log(age);
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// 普通函数
+	// const getRandom = function () {
+	// 	return Math.random();
+	// };
+	// console.log(getRandom());
+	
+	// 箭头函数
+	// const getRandom = () => {
+	// 	return Math.random();
+	// };
+	//
+	// console.log(getRandom());
+	
+	// 接受函数
+	// const getRandom = (n, m) => {
+	// 	return Math.floor(Math.random() * (m - n + 1) + n);
+	// };
+	//
+	// console.log(getRandom(10, 20));
+	
+	// 只有一个形参的时候可以省略小括号
+	// const func = x => {
+	// 	console.log(x);
+	// };
+	//
+	// func(100);
+	
+	
+	// 只有一行代码的时候，可以直接省略大括号
+	// const func = x => console.log(x);
+	// func(10);
+	
+	// 只有一行代码的时候，可以省略return
+	// const func = x => x + 10;
+	//
+	// console.log(func(10));
+	
+	// 箭头函数可以直接返回一个对象
+	// ({});
+	const func = (name) => ({name: name});
+	
+	console.log(func('你是谁？'));
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const pc = ['海尔', '小米', '联想', '方正'];
+	const [hr, xm, lx, fz] = pc;
+	console.log(hr);
+	console.log(xm);
+	console.log(lx);
+	console.log(fz);
+	
+	const getValue = () => {
+		return [100, 60];
+	};
+	
+	const [max, min] = getValue();
+	console.log(max);
+	console.log(min);
+</script>
+</body>
+</html>

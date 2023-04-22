@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// const pig = {
+	// 	name: "Porky",
+	// 	age: 3,
+	// 	weight: "200kg",
+	// 	diet: {
+	// 		morning: "corn",
+	// 		afternoon: "vegetables",
+	// 		evening: "fruit"
+	// 	},
+	// 	location: {
+	// 		country: "China",
+	// 		province: "Jiangsu",
+	// 		city: "Nanjing"
+	// 	},
+	// 	data: {
+	// 		data: {
+	// 			location: {
+	// 				country: "China",
+	// 				province: "Jiangsu",
+	// 				city: "Nanjing"
+	// 			}
+	// 		}
+	// 	}
+	// };
+	// // 多级解构
+	//
+	// const {name, age, weight, diet: {morning, afternoon, evening}} = pig;
+	// console.log(name);
+	// console.log(age);
+	// console.log(weight);
+	// console.log(morning);
+	// console.log(afternoon);
+	// console.log(evening);
+	// // 嵌套
+	// const {data} = pig;
+	// const {data: data2} = data;
+	// const {location: {country, province, city}} = data2;
+	// console.log(country);
+	// console.log(province);
+	// console.log(city);
+	
+	// 数组对象解构
+	const peppaPig = [
+		{
+			name: "Peppa Pig",
+			family: [
+				{
+					name: "Daddy Pig",
+					job: "Architect"
+				},
+				{
+					name: "Mommy Pig",
+					job: "Stay-at-home mom"
+				},
+				{
+					name: "George Pig"
+				}
+			],
+			age: 6
+		}
+	];
+	
+	const [{name, age, family: [{name: fName, job}]}] = peppaPig;
+	console.log(name);
+	console.log(age);
+	// console.log(family);
+	console.log(fName);
+	console.log(job);
+
+</script>
+</body>
+</html>

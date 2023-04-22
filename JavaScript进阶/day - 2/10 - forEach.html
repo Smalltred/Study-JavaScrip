@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const response = {
+		"code": 200,
+		"msg": "获取新闻列表成功",
+		"data": [
+			{
+				"id": 1,
+				"title": "5G商用自己，三大运用商收入下降",
+				"count": 58
+			},
+			{
+				"id": 2,
+				"title": "国际媒体头条速览",
+				"count": 56
+			},
+			{
+				"id": 3,
+				"title": "乌克兰和俄罗斯持续冲突",
+				"count": 1669
+			},
+		
+		]
+	};
+	
+	const arr = [10, 20, 30, 40];
+	// forEach 遍历 适合遍历数组对象
+	arr.forEach(function (value, index) {
+		console.log(value);
+		console.log(index);
+	});
+	// console.log(result);
+	
+	const {data} = response;
+	
+	data.forEach(function (value) {
+		console.log(value.id);
+		console.log(value.title);
+		console.log(value.count);
+	});
+</script>
+</body>
+</html>

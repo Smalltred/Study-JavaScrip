@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	console.log(this); // windows 
+	
+	function func() {
+		console.log(this);
+	}
+	
+	// func(); // 函数在windows被调用了 指向windows
+	
+	// 对象  this 指向当前这个对象
+	const obj = {
+		name: 'hecady',
+		age: 21,
+		show: function () {
+			console.log(this);
+		},
+	};
+	
+	obj.show();
+	
+	// 箭头函数的this
+	
+	const fn = () => {
+		console.log(this);  // 指向上一层的作用域的this
+	};
+	
+	fn();
+	// 对象方法箭头函数的this
+	
+	// const data = {
+	// 	uname: 'cady',
+	// 	sayHi: () => {
+	// 		console.log(this); // 指向windows
+	// 	}
+	// };
+	//
+	// data.sayHi();
+	
+	
+	const data = {
+		uname: 'cady',
+		sayHi: function () {
+			let n = 10;
+			const func = () => {
+				console.log(this);
+			};
+			func();
+		}
+	};
+	
+	data.sayHi()    ;
+</script>
+</body>
+</html>
