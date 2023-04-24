@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	function Goods(name, price, count) {
+		this.name = name;
+		this.price = price;
+		this.count = count;
+	}
+	
+	
+	const xiaomi = new Goods('小米', 1999, 20);
+	const huawei = new Goods('华为', 3999, 59);
+	const vivo = new Goods('vivo', 1888, 100);
+	
+	console.log(xiaomi);
+	console.log(huawei);
+	console.log(vivo);
+</script>
+</body>
+</html>

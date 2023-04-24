@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<div class="space"></div>
+<script>
+	const spec = {size: '40cm*40cm', color: '黑色'};
+	// 获取所有的values
+	// console.log(Object.values(spec));
+	// 转换子字符串
+	// console.log(Object.values(spec).join('/'))
+	document.querySelector('.space').innerHTML = Object.values(spec).join('/');
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const str = '你好啊，红红火火';
+	console.log(str.startsWith('你好')); // true 是否为你好开头
+	console.log(str.startsWith(',')); // false
+	console.log(str.startsWith('红红', 4)); // 从索引4开始是否为红红开头
+</script>
+</body>
+</html>

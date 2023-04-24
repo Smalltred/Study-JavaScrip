@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	function Pig(name) {
+		this.name = name;
+	}
+	
+	//
+	// const peiqi = new Pig('佩奇');
+	// const qiaozhi = new Pig('乔治');
+	//
+	// peiqi.name = '小猪佩奇';
+	//
+	// peiqi.sayHi = () => {
+	// 	console.log('hi');
+	// };
+	//
+	// peiqi.sayHi();
+	//
+	// console.log(peiqi);
+	// console.log(qiaozhi);
+	// console.log(peiqi === qiaozhi);
+	
+	// 静态成员
+	Pig.eyes = 2;
+	
+	// 静态方法
+	Pig.sayHi = function () {
+		console.log('hi...');
+		console.log(this);
+	};
+	
+	Pig.sayHi();
+	
+	console.log(Pig.eyes);
+</script>
+</body>
+</html>

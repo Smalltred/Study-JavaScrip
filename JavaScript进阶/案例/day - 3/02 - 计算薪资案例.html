@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const arr = [
+		{
+			name: '张三',
+			salary: 10000,
+		},
+		{
+			name: '李四',
+			salary: 20000,
+		},
+		{
+			name: '王五',
+			salary: 30000,
+		}
+	];
+	
+	// reduce 数组对象计算 初始值一定要设置为0
+	
+	// const sum = arr.reduce((previousValue, currentValue) => previousValue + currentValue.salary, 0);
+	// // 上一次的值 0  + 当前对象里的salary 10000  第一次
+	// // 上一次的值 10000 + 当前对象里的salary 20000 第二次
+	// console.log(sum);
+	
+	// 需求： 每个人涨薪 30% 当月支持工资多少
+	
+	const sum = arr.reduce((previousValue, currentValue) => previousValue + currentValue.salary * 1.3, 0);
+	// // 上一次的值 0  + 当前对象里的salary 10000 * 1.3 = 13000  第一次
+	// // 上一次的值 13000 + 当前对象里的salary 20000 * 1.3 = 26000 第二次
+	console.log(sum);
+</script>
+</body>
+</html>

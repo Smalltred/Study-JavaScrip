@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// const arr = ['red', 'blue', 'greed'];
+	
+	// const re = arr.find(item => item === 'blue');
+	// console.log(re);
+	
+	
+	const arr = [
+		{
+			name: '小米',
+			price: 1999,
+		},
+		{
+			name: '华为',
+			price: 3999
+		},
+		{
+			name: '小米',
+			price: 4999
+		}
+	];
+	// 返回第一个满足条件的
+	const re = arr.find(item => item.name === '小米');
+	console.log(re);
+	
+	// 返回所有满足条件的
+	// const re = arr.filter(item => item.name === '小米');
+	// console.log(re);
+</script>
+</body>
+</html>

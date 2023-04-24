@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const str = '今天是一个美好的一天';
+	// 截取第一个字符
+	console.log(str.substring(0, 1));
+	// 不写结束索引 默认从截取位置往后截取
+	console.log(str.substring(5));
+	// 截取的字符不包含结束索引的位置
+	console.log(str.substring(2, 7));
+</script>
+</body>
+</html>

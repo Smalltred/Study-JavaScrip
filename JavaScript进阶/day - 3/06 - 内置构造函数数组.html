@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const arr = [45, 87, 12, 68, 34, 91, 2, 77, 99, 53];
+	
+	// 数组reduce方法 没有初始值
+	const sum = arr.reduce(function (previousValue, currentValue) {
+		// 执行流程 上一次的值 当前值 返回值 第一次循环  总的循环次数比数组长度少1
+		// 45    87    132
+		// 上一次的值（上一次的返回值） 当前值  返回值  第二次循环
+		// 	132      12       144
+		return previousValue + currentValue;
+	});
+	console.log(sum);
+	
+	// 有初始值
+	const sum1 = arr.reduce(function (previousValue, currentValue) {
+		// 执行流程 上一次的值 当前值 返回值 第一次循环  总的循环次数比数组长度少1
+		//              10 (初始值)   45
+		// 上一次的值（上一次的返回值） 当前值  返回值  第二次循环
+		// 	55      87       142
+		return previousValue + currentValue;
+		// 最后加上后面的初始值
+	}, 10);
+	
+	console.log(sum1);
+	
+	const sum2 = arr.reduce((previousValue, currentValue) => {
+		return previousValue + currentValue;
+	}, 10);
+	
+	const sum3 = arr.reduce((previousValue, currentValue) => previousValue + currentValue, 10);
+	
+	console.log(sum3);
+
+</script>
+</body>
+</html>
