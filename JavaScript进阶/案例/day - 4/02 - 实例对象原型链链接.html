@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	function Star(name) {
+		this.name = name;
+	}
+	
+	const ldh = new Star('刘德华');
+	
+	
+	// 构造函数和构造函数的原型对象
+	// 1.	构造函数 指向 构造函数的 对象原型的属性
+	console.log(Star === Star.prototype.constructor);
+	// 2.   构造函数的 对象原型的属性 指向 构造函数
+	console.log(Star.prototype.constructor === Star);
+	
+	// 构造函数对象原型和实例对象原型对象
+	// 1.   构造函数的原型对象 指向 实例对象的 对象原型
+	console.log(Star.prototype === ldh.__proto__);
+	// 2.   实例对象的 原型对象 指向 构造函数的原型对象
+	console.log(ldh.__proto__ === Star.prototype);
+	
+	// 实例对象的原型对象和构造函数的对象原型
+	// 1.   构造函数的原型对象属性 指向 实例对象的 对象原型
+	console.log(Star.prototype.constructor === ldh.__proto__.constructor);
+
+</script>
+</body>
+</html>

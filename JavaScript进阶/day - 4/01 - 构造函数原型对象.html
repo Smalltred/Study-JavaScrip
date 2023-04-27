@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	
+	// 公共的属性写到构造函数里面
+	function Star(name, age) {
+		this.name = name;
+		this.age = age;
+		// this.sing = function () {
+		// 	console.log('唱歌');
+		// };
+	}
+	
+	// 原型挂载函数 共享方法 公共的方法写到原型对象上面
+	Star.prototype.sing = function () {
+		console.log('唱歌');
+	};
+	
+	const zjl = new Star('周杰伦', 40);
+	const ldh = new Star('刘德华', 55);
+	zjl.sing();
+	ldh.sing();
+	// ldh.sing();
+	// 	构造函数的对象
+	// console.dir(Star.prototype);
+</script>
+</body>
+</html>

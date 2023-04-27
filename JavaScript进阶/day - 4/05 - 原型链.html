@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	function Person() {
+	
+	}
+	
+	const person1 = new Person();
+	
+	console.log(Person.prototype.__proto__);
+	
+	// 实例对象 里面的原型对象
+	console.log(person1.__proto__ === Person.__proto__);
+	//
+	console.log(Person.__proto__ === Object.__proto__);
+	//
+	console.log(person1.__proto__.__proto__); // null
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	
+	// 1.数组扩展方法
+	// const arr = new Array(1, 2, 3)
+	// const arr = [1, 2, 4];
+	
+	// 	定义数组方法 求最大值
+	Array.prototype.max = function () {
+		// ths执行当前的实例对象
+		return Math.max(...this);
+	};
+	// 定义数组方法 求和
+	// Array.prototype.sum = function () {
+	// 	let sum = 0;
+	// 	for (let i = 0; i < this.length; i++) {
+	// 		sum += this[i];
+	// 	}
+	// 	return sum;
+	// };
+	Array.prototype.sum = function () {
+		// 当前值 和 下一个值 相加
+		return this.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+	};
+	
+	// 定义数组方法 求最小值
+	Array.prototype.min = function () {
+		return Math.min(...this);
+	};
+	
+	const arr = [1, 2, 3];
+	console.log(arr.max());
+	console.log(arr.sum());
+	console.log(arr.min());
+</script>
+</body>
+</html>

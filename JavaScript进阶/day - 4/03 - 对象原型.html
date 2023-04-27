@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	function Star() {
+		// 原型对象
+		Star.prototype.name = '张三';
+	}
+	
+	// 实例化
+	const ldh = new Star();
+	// 实例对象 属性
+	console.log(ldh.name);
+	// 实例对象
+	console.log(ldh);
+	
+	// 指向该构造函数的原型对象
+	console.log(ldh.__proto__);
+	// 实例对象的原型对象指向 构造函数的原型对象
+	console.log(ldh.__proto__ === Star.prototype); // true
+	// 实例对象的原型对象的属性指向构造函数本身
+	console.log(ldh.__proto__.constructor === Star); // true
+	// 实例对象的原型对象 指向 构造函数的原型对象
+	console.log(ldh.__proto__ === Star.prototype); // true
+	// 实例对象的原型对象属性指向构造函数本身
+	console.log(ldh.constructor === Star.prototype.constructor); // true
+	
+	// 构造函数 指向 实例对对象的原型对象的属性
+	console.log(Star === ldh.__proto__.constructor);  // true
+	// 构造函数 指向 实例对对象的原型对象的属性
+	console.log(Star === ldh.constructor);  // true
+	// 构造函数的原型对象 指向 实例对象的原型对象
+	console.log(Star.prototype === ldh.__proto__); // true
+</script>
+</body>
+</html>

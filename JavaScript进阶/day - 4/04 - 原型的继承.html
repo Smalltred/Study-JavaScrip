@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// // 人类 对象
+	// const Person = {
+	// 	eyes: 2,
+	// 	head: 1
+	// };
+	function Person() {
+		this.eyes = 2;
+		this.head = 1;
+	}
+	
+	// 女人 继承人类的属性
+	function Woman() {
+		
+	}
+	
+	// 女人的构造函数的原型对象 指向 人类这个对象的属性
+	// Woman.prototype = Person;
+	// 父类(Person) 子类(Woman) 子类继承父类
+	Woman.prototype = new Person();
+	// 但是女人的构造函数中的原型对象直接被赋值了也是没有有了 我们现在要指回这个构造函数的对象原型
+	Woman.prototype.constructor = Woman;
+	
+	// 给女人添加一个方法 生孩子
+	Woman.prototype.baby = function () {
+		console.log('生孩子');
+	};
+	
+	// 实例化
+	const person1 = new Woman();
+	
+	console.log(person1);
+	
+	// 男人 继承人类的属性
+	function Man() {
+		
+	}
+	
+	// Man.prototype = Person;
+	Man.prototype = new Person();
+	Man.prototype.constructor = Man;
+	
+	const person2 = new Man();
+	console.log(person2);
+</script>
+</body>
+</html>
