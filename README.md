@@ -6,7 +6,7 @@
 
 ✅ JavaScript 基础内容  
 ✅ Web API  
-❌ JavaScript进阶  
+✅ JavaScript进阶  
 ❌ Ajax  
 ❌ Fetch  
 ❌ Promise   
