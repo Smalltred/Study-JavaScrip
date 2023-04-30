@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<button>点我</button>
+<script>
+	const obj = {
+		name: 'obj',
+		age: 18
+	};
+	
+	function func() {
+		console.log(this);
+	}
+	
+	// 	bind不会调用函数 能改变this指向 但是这个函数里面的this是经过改变的 返回一个新的函数
+	const newFunc = func.bind(obj);
+	newFunc();
+	
+	// 需求 有一个按钮，点击里面就禁用，2秒之后开启
+	const button = document.querySelector('button');
+	button.addEventListener('click', function () {
+		// 禁用按钮
+		this.disabled = true;
+		setTimeout(function () {
+			this.disabled = false;
+		}.bind(this), 2000);
+		// 箭头函数
+		// setTimeout(() => {
+		// 	this.disabled = false;
+		// }, 2000);
+	});
+	
+	// function _closeButton() {
+	// 	this.disabled = false;
+	// }
+	//
+	// const closeButton = _closeButton.bind(button);
+</script>
+</body>
+</html>

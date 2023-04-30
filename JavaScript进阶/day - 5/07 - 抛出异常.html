@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	function func(x, y) {
+		if (!x || !y) {
+			// 终止程序
+			// 可以直接写错误信息
+			// 配合错误对象来使用
+			throw new Error('缺少必要参数')
+		}
+		return x + y;
+	}
+	
+	console.log(func())
+</script>
+</body>
+</html>

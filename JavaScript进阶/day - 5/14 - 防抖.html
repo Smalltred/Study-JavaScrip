@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const box = document.querySelector('.box');
+	let i = 1;
+	
+	function mouseMove() {
+		box.innerHTML = i++;
+	}
+	
+	
+	// 	利用lodash库来实现防抖
+	// 	语法: _.debounce(func, 时间)
+	
+	// 添加事件
+	box.addEventListener('mousemove', _.debounce(mouseMove, 500));
+</script>
+</body>
+</html>

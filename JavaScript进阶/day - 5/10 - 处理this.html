@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<button>点我</button>
+<script>
+	<!-- 开启严格模式 -->
+	// 'use strict';
+	// console.log(this);
+	// 	普通函数的this是 谁调用就指向谁
+	function fn() {
+		console.log(this);  // 严格模式 this是undefined
+	}
+	
+	// fn() = window.fn()
+	// window.fn()
+	fn();
+	
+	window.setTimeout(function () {
+		console.log('我是计时器',this);  // windows
+	}, 1000);
+	
+	document.querySelector('button').addEventListener('click', function () {
+		console.log(this); // 指向当前的对象 也是button
+	});
+	
+	// document.querySelector('button').addEventListener('click', () => {
+	// 	console.log(this); // 指向window
+	// });
+	
+	// 	对象
+	const obj = {
+		name: 'cady',
+		sayHi: function () {
+			console.log(this); // 指向当前对象
+		}
+	};
+	
+	obj.sayHi()
+	
+	// 箭头函数
+	const func = () => {
+		console.log('箭头函数',this);
+	}
+	// 这里是this指向上一级查找this
+	func()
+	
+	
+
+</script>
+</body>
+</html>

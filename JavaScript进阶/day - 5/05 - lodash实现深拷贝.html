@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<script src="https://cdn-cos-cloud.hecady.com/cloud/yp-static/js/2023004029/lodash.js"></script>
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const obj = {
+		uname: 'hecady',
+		age: 20,
+		hobby: ['你好', '啊', '你是煞笔吗？'],
+		family: {
+			baby: '小cady',
+			sh: {
+				a: "a"
+			}
+		}
+	};
+	
+	const o = _.cloneDeep(obj);
+	o.family.sh.a = 1;
+	console.log(o);
+	console.log(obj);
+</script>
+</body>
+</html>

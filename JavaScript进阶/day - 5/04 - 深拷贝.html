@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const obj = {
+		uname: 'hecady',
+		age: 20,
+		hobby: ['你好', '啊', '你是煞笔吗？'],
+		family: {
+			baby: '小cady',
+			sh: {
+				a: "a"
+			}
+		}
+	};
+	
+	const o = {};
+	
+	// 	拷贝函数
+	function deepCopy(newObj, oldObj) {
+		for (const oldObjKey in oldObj) {
+			// 处理数组问题
+			if (oldObj[oldObjKey] instanceof Array) {
+				newObj[oldObjKey] = [];
+				deepCopy(newObj[oldObjKey], oldObj[oldObjKey]);
+			} else if (oldObj[oldObjKey] instanceof Object) {
+				deepCopy(newObj[oldObjKey], oldObj[oldObjKey]);
+			} else {
+				// 处理外层对象属性
+				// console.log(obj[oldObjKey]);
+				newObj[oldObjKey] = oldObj[oldObjKey];
+			}
+		}
+	}
+	
+	deepCopy(o, obj);
+	console.log(obj);
+	o.hobby[0] = '球';
+	o.family.sh.a = 1;
+	console.log(o);
+	console.log(obj);
+</script>
+</body>
+</html>

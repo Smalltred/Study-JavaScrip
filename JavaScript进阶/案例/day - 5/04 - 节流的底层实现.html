@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+		
+		.box {
+			width: 300px;
+			height: 300px;
+			font-size: 100px;
+			text-align: center;
+			line-height: 300px;
+			cursor: pointer;
+			background-color: #1aa5fb;
+		}
+	</style>
+</head>
+<body>
+<div class="box">1</div>
+<script>
+	const box = document.querySelector('.box');
+	let i = 1;
+	
+	
+	function mouseMove() {
+		box.innerHTML = i++;
+	}
+	
+	// 手写节流函数
+	function throttle(fn, t) {
+		let timer = null;
+		return function () {
+			if (!timer) {
+				timer = setTimeout(function () {
+					fn();
+					// 清除定时器 在开启的定时  器里面是无法清除定时器的
+					timer = null;
+				}, t);
+			}
+		};
+	}
+	
+	// 添加事件
+	box.addEventListener('mousemove', throttle(mouseMove, 1000));
+</script>
+</body>
+</html>

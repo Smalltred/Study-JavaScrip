@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const obj = {
+		uname: 'hecady',
+		age: 18,
+		family: {
+			baby: 'cady'
+		}
+	};
+	// 浅拷贝 只拷贝最外层， 里层还是拷贝的地址 实际上是引用 （只适用于单层拷贝）
+	// const o = {...obj};
+	// console.log(o);
+	// o.age = 20;
+	// console.log(o);
+	// console.log(obj);
+	
+	// assign方法
+	const o = {};
+	Object.assign(o, obj);
+	o.age = 20;
+	o.family.baby = 'cady1';
+	console.log(o);
+	console.log(obj);
+</script>
+</body>
+</html>

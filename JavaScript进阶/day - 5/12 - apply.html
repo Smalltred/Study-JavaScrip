@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const obj = {
+		name: 'hecady',
+		age: 15
+	};
+	
+	function func(x, y) {
+		// 自动...arr
+		console.log(this);
+		console.log(this.name);
+		console.log();
+		console.log(x + y);
+	}
+	
+	// 	调用函数 改变this指向
+	func.apply(obj, [1, 2]);
+	// 	返回值 本身就是在调用函数 所有返回值就是函数的返回值
+	
+	// 	使用场景 求数组最大值
+	const arr = [1, 2213, 4321, 643, 6345]
+	// const max = Math.max(...arr)
+	const max = Math.max.apply(Math, arr)
+	const mix = Math.min.apply(Math, arr)
+	console.log(max);
+	console.log(mix);
+</script>
+</body>
+</html>
