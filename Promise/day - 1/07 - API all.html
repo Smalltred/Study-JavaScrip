@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	
+	const p1 = Promise.resolve('OK');
+	// 当其中一个为失败的话 那么result就会失败 且失败的结果为 失败对象的结果 且失败后就直接中断执行
+	// const p2 = Promise.resolve('YES');
+	const p2 = Promise.reject('NO');
+	const p3 = Promise.resolve('GOOD');
+	
+	// all
+	// 数组Promise对象都成功了才是正确的 可以理解成是逻辑与
+	const result = Promise.all([p1, p2, p3]);
+	// result.catch(() => {
+	// 	console.log('1');
+	// });
+	console.log(result);
+</script>
+</body>
+</html>

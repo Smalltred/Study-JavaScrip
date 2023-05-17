@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	// const p = Promise.reject('123');
+	// 传入的是失败的结果，无论传入什么都为失败的结果
+	
+	// 传入的是一个成功后的对象，但是其实是失败的结果， 虽然失败了 但结果是成功的
+	const p1 = Promise.reject(new Promise((resolve, reject) => {
+		resolve('ok');
+	}));
+	console.log(p1);
+</script>
+</body>
+</html>

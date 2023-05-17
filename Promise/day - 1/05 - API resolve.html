@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const p = Promise.resolve('123');
+	// 如果传入的参数为非Promise类型的对象，那么都是成功的Promise对象
+	
+	const p1 = new Promise((resolve, reject) => {
+		// resolve('ok');
+		reject('error');
+	});
+	
+	p1.catch((reason) => {
+		console.log(reason);
+	});
+	// 成功
+	console.log(p1);
+</script>
+</body>
+</html>

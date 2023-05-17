@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+	<script src="https://cdn-cos-cloud.hecady.com/cloud/yp-static/js/2023004030/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<button>点击发送AJAX</button>
+<script>
+	$(function () {
+		$('button').on('click', function () {
+			$.get('https://api.hecady.com/service/v1/bing/1080/8', function (res) {
+				console.log(res);
+			})
+		});
+	});
+</script>
+</body>
+</html>

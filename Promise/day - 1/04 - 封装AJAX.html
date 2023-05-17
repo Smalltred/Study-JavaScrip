@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<div></div>
+<button>发送</button>
+<script>
+	function sendAjax(url) {
+		return new Promise((resolve, reject) => {
+			const xhr = new XMLHttpRequest();
+			xhr.responseType = 'json';
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4) {
+					if (xhr.status >= 200 && xhr.status < 400) {
+						if (response.code === 200) {
+							resolve(response);
+						} else {
+							reject('获取失败');
+						}
+					} else {
+						reject('请求失败');
+					}
+				}
+			};
+			xhr.open('GET', url, true);
+			xhr.send();
+		});
+	}
+	
+	const div = document.querySelector('div');
+	const button = document.querySelector('button');
+	
+	button.addEventListener('click', function () {
+		sendAjax('https://api.apiopen.top/api/sentences?')
+				.then((value) => {
+					div.innerHTML = value.result.name;
+				}, (reason) => {
+					div.innerHTML = reason;
+				});
+	});
+</script>
+</body>
+</html>

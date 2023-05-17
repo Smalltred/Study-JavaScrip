@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+	<style>
+	
+	</style>
+</head>
+<body>
+<div class="box"></div>
+<button class="send">发送</button>
+<script>
+	
+	// 选择box
+	const box = document.querySelector('.box');
+	
+	// 定义回调函数
+	function success() {
+		box.innerHTML = '成功';
+	}
+	
+	function wait() {
+		box.innerHTML = '请稍等';
+	}
+	
+	function fail() {
+		box.innerHTML = '失败';
+	}
+	
+	
+	function sendRequest() {
+		const xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState === 4) {
+				if (xhr.status === 200 && xhr.status < 300) {
+					return success();
+				} else {
+					return fail();
+				}
+			} else {
+				return wait();
+			}
+		};
+		xhr.open('GET', 'https://api-music.hecady.com', true);
+		xhr.send();
+	}
+	
+	
+	// 选择按钮
+	const sendButton = document.querySelector('.send');
+	
+	sendButton.addEventListener('click', sendRequest);
+</script>
+</body>
+</html>

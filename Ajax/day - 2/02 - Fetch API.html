@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<div class="box"></div>
+<button class="send">发送</button>
+<script>
+	async function get(url) {
+		const response = await fetch(url);
+		return response.text();
+	}
+	
+	// 选择box
+	const box = document.querySelector('.box');
+	
+	function sendRequests() {
+		get('https://api-music.hecady.com')
+				.then(data => {
+					box.innerHTML = '发送成功';
+				})
+				.catch(error => {
+					box.innerHTML = '发送失败';
+				});
+	}
+	
+	// 	发送请求
+	
+	const buttonSend = document.querySelector('.send');
+	
+	buttonSend.addEventListener('click', sendRequests);
+
+</script>
+</body>
+</html>

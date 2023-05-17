@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<div></div>
+<button>发送</button>
+<script>
+	const button = document.querySelector('button');
+	const div = document.querySelector('div');
+	
+	button.addEventListener('click', function () {
+		// const xhr = new XMLHttpRequest();
+		// xhr.onreadystatechange = function () {
+		// 	if (xhr.readyState === 4) {
+		// 		if (xhr.status === 200 && xhr.status < 400) {
+		// 			const response = JSON.parse(xhr.response);
+		// 			if (response.code === 200) {
+		// 				div.innerHTML = response.result.name;
+		// 			} else {
+		// 				console.log('获取失败');
+		// 			}
+		// 		} else {
+		// 			console.log('发送失败');
+		// 		}
+		// 	}
+		// };
+		// xhr.open('GET', 'https://api.apiopen.top/api/sentences', true);
+		// xhr.send();
+		const p = new Promise((resolve, reject) => {
+			const xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4) {
+					if (xhr.status === 200 && xhr.status < 400) {
+						const response = JSON.parse(xhr.response);
+						if (response.code === 200) {
+							resolve(response);
+						} else {
+							reject();
+						}
+					} else {
+						reject();
+					}
+				}
+			};
+			xhr.open('GET', 'https://api.apiopen.top/api/sentences', true);
+			xhr.send();
+		});
+		p.then((value) => {
+			div.innerHTML = value.result.name;
+		}, (reason) => {
+			div.innerHTML = '请求失败';
+		});
+	});
+</script>
+</body>
+</html>

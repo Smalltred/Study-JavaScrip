@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<button class="btn">抽奖</button>
+<script>
+	// 选择按钮
+	const btn = document.querySelector('.btn');
+	
+	// 定义随机数函数
+	function getRandom(n, m) {
+		return Math.floor(Math.random() * (m - n + 1) + n);
+	}
+	
+	btn.addEventListener('click', () => {
+		// 常规异步
+		// setTimeout(() => {
+		// 	if (getRandom(0, 100) <= 30) {
+		// 		alert('恭喜中奖了');
+		// 	} else {
+		// 		alert('再接再厉');
+		// 	}
+		// }, 1000);
+		// 	Promise
+		const p = new Promise((resolve, reject) => {
+			setTimeout(() => {
+				if (getRandom(0, 100) <= 30) {
+					resolve();
+				} else {
+					reject();
+				}
+			}, 1000);
+		});
+		
+		p.then((value) => {
+			alert('恭喜中奖了');
+		}, (reason) => {
+			alert('再接再厉');
+		});
+	});
+
+</script>
+</body>
+</html>
