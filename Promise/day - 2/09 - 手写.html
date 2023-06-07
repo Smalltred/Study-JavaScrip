@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+
+<!--<script src="p.js"></script>-->
+<script>
+	const p = new Promise((resolve, reject) => {
+		// resolve('error');
+		// resolve('ok');
+		// 抛出异常
+		// throw 'error';
+		setTimeout(() => {
+			resolve('ok')
+		}, 1000);
+	});
+	
+	p.then(value => {
+		console.log(value);
+	}, reason => {
+		console.warn(reason);
+	});
+	
+	// console.log(p);
+</script>
+</body>
+</html>

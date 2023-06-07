@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	const p1 = new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve('ok');
+		}, 1000);
+	});
+	const p2 = Promise.resolve('YES');
+	const p3 = Promise.resolve('GOOD');
+	
+	// 如果 P1 成功 那么 result就是成功
+	const result = Promise.race([p1, p2, p3]);
+	console.log(result);
+</script>
+</body>
+</html>

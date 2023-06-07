@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const p = new Promise((resolve, reject) => {
+		// 改变状态 再回调
+		setTimeout(() => {
+		resolve('ok');
+		}, 1000);
+		// 1. 指定回调 -> 改变状态 -> 执行回调
+		// 2. 改变状态 -> 指定回调 -> 执行回调
+	});
+	
+	// 指定回调
+	p.then(value => {
+		console.log(value);
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const p = new Promise((resolve, reject) => {
+		// resolve('ok'); // 调用函数 修改pending 为fulfilled
+		// reject('error') // 修改为失败
+		throw '错误了'
+	});
+	
+	console.log(p);
+</script>
+</body>
+</html>

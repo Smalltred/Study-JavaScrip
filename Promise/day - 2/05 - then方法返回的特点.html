@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta name="referrer" content="never">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const p = new Promise((resolve, reject) => {
+		resolve('ok');
+	});
+	const result = p.then((value) => {
+		// 抛出异常 result状态是reject
+		// throw '123';
+		// 	返回结果不是Promise数据类型 都为 成功
+		// return 123;
+		// 返回 Promise 对象的状态的结果
+		return new Promise((resolve, reject) => {
+			resolve('123')
+		});
+	});
+	
+	console.log(result);
+</script>
+</body>
+</html>

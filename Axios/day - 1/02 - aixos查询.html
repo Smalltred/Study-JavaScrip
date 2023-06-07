@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<p></p>
+<script>
+	axios({
+		url: 'https://hmajax.itheima.net/api/city',
+		params: {
+			pname: '广东省'
+		}
+	}).then(result => {
+		console.log(result);
+		console.log(result.data.list.join('br'));
+		document.querySelector('p').innerHTML = result.data.list.join('<br>');
+	});
+</script>
+</body>
+</html>
