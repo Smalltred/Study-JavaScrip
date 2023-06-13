@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<button class="btn">注册账号</button>
+<script>
+	
+	// 选择按钮
+	const btn = document.querySelector('.btn');
+	btn.addEventListener('click', () => {
+		// https://hmajax.itheima.net/api/register
+		axios({
+			url: 'https://hmajax.itheima.net/api/register',
+			method: 'post',
+			data: {
+				username: 'xiaodao123',
+				password: '12345678'
+			}
+		}).then(result => {
+			console.log(result);
+		}).catch(error => {
+			// console.log(error.response.data);
+			alert(error.response.data.message);
+		});
+	});
+
+</script>
+</body>
+</html>
